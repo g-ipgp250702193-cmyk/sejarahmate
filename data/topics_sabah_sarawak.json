@@ -1,0 +1,94 @@
+{
+  "category": "Sabah and Sarawak History",
+  "topics": [
+    {
+      "id": "sabah_history",
+      "title": "Sejarah Sabah",
+      "title_en": "History of Sabah",
+      "title_zh": "沙巴历史",
+      "keywords": ["sabah", "sejarah sabah", "north borneo", "borneo utara", "borneo", "sabah history", "syarikat berpiagam borneo utara", "sbbu", "chartered company", "kadazan", "dusun", "murut", "bajau", "sandakan", "沙巴", "沙巴历史"],
+      "short_explanation": "Sabah, dahulunya dikenali sebagai Borneo Utara, berada di bawah pengaruh Kesultanan Brunei dan Sulu sebelum dikuasai oleh Syarikat Berpiagam Borneo Utara British (SBBU) pada 1881 dan seterusnya menyertai Malaysia pada 1963.",
+      "short_explanation_en": "Sabah, formerly known as North Borneo, was under the influence of the Brunei and Sulu Sultanates before being controlled by the British North Borneo Chartered Company (BNBCC) in 1881 and joining Malaysia in 1963.",
+      "short_explanation_zh": "沙巴，以前被称为北婆罗洲，在1881年被英国北婆罗洲特许公司控制之前，一直处于文莱和苏禄苏丹国的影响之下，并于1963年加入马来西亚。",
+      "detailed_explanation": "Sejarah Sabah:\n\n1. Zaman Pra-Kolonial:\n- Sabah didiami pelbagai suku kaum — Kadazan-Dusun, Bajau, Murut, Suluk\n- Berada di bawah pengaruh Kesultanan Brunei (bahagian barat) dan Kesultanan Sulu (bahagian timur)\n\n2. Syarikat Berpiagam Borneo Utara British (SBBU):\n- 1881: SBBU mendapat piagam diraja, menguasai Borneo Utara\n- Membangunkan infrastruktur — jalan kereta api, pelabuhan\n- Menggunakan buruh dan sumber semula jadi Sabah\n\n3. Penjajahan Jepun (1941–1945):\n- Jepun menyerang dan menduduki Borneo Utara\n- Rakyat menghadapi penderitaan — Sandakan Death March salah satu peristiwa tragis\n- Sandakan Death March: Lebih 2,400 tahanan perang dipaksa berjalan kaki\n\n4. Pasca Perang Dunia Kedua:\n- 1946: Borneo Utara menjadi tanah jajahan Mahkota British\n- SBBU diserahkan kuasanya kepada Kerajaan British\n\n5. Penyertaan dalam Malaysia (1963):\n- Laporan Cobbold menyokong penyertaan\n- 20 Perkara Sabah — syarat-syarat perlindungan hak rakyat Sabah\n- Sabah menyertai Malaysia pada 16 September 1963\n\n20 Perkara Sabah (antara lain):\n- Agama: tiada agama rasmi di Sabah\n- Bahasa: Bahasa Malaysia tidak menjadi bahasa rasmi dalam masa terdekat\n- Hak imigresen: Sabah mengawal imigresen sendiri\n- Kepala Negara: Yang di-Pertuan Agong ialah ketua negara",
+      "important_dates": [
+        {"year": "1881", "event": "Syarikat Berpiagam Borneo Utara British (SBBU) menguasai Borneo Utara"},
+        {"year": "1942", "event": "Jepun menduduki Borneo Utara"},
+        {"year": "1943–1945", "event": "Sandakan Death March berlaku"},
+        {"year": "1946", "event": "Borneo Utara menjadi Tanah Jajahan Mahkota British"},
+        {"year": "1963 (16 September)", "event": "Sabah menyertai Malaysia"}
+      ],
+      "historical_figures": [
+        {"name": "Donald Stephens (Fuad Stephens)", "role": "Pemimpin Sabah yang menyokong penyertaan dalam Malaysia"},
+        {"name": "Mat Salleh", "role": "Pahlawan Sabah yang menentang penjajahan SBBU"}
+      ],
+      "related_topics": ["malaysia_formation", "sarawak_history", "british_colonialism"],
+      "quiz_questions": [
+        {
+          "id": "q_sabah_1",
+          "question": "Apakah nama syarikat yang menguasai Borneo Utara pada tahun 1881?",
+          "question_en": "What was the name of the company that controlled North Borneo in 1881?",
+          "type": "mcq",
+          "options": [
+            "East India Company",
+            "Syarikat Berpiagam Borneo Utara British",
+            "Syarikat Hindia Timur Belanda",
+            "British Malaya Company"
+          ],
+          "answer": 1,
+          "explanation": "Syarikat Berpiagam Borneo Utara British (SBBU) atau British North Borneo Chartered Company menguasai Borneo Utara bermula tahun 1881."
+        },
+        {
+          "id": "q_sabah_2",
+          "question": "Sandakan Death March melibatkan tahanan perang semasa Perang Dunia Kedua.",
+          "question_en": "The Sandakan Death March involved prisoners of war during World War II.",
+          "type": "truefalse",
+          "answer": true,
+          "explanation": "Benar. Sandakan Death March adalah satu peristiwa tragis semasa pendudukan Jepun di mana lebih 2,400 tahanan perang dipaksa berjalan kaki dalam keadaan yang sangat menyeksakan."
+        }
+      ]
+    },
+    {
+      "id": "sarawak_history",
+      "title": "Sejarah Sarawak",
+      "title_en": "History of Sarawak",
+      "title_zh": "砂拉越历史",
+      "keywords": ["sarawak", "brooke", "rajah putih", "white rajah", "james brooke", "iban", "dayak", "kuching", "砂拉越"],
+      "short_explanation": "Sarawak diperintah oleh dinasti Brooke (Rajah Putih) dari 1841 hingga 1946 sebelum menjadi tanah jajahan British dan seterusnya menyertai Malaysia pada 1963.",
+      "short_explanation_en": "Sarawak was ruled by the Brooke dynasty (White Rajahs) from 1841 to 1946 before becoming a British Crown Colony and eventually joining Malaysia in 1963.",
+      "short_explanation_zh": "砂拉越由布鲁克王朝（白人拉惹）统治，从1841年到1946年，随后成为英国皇家殖民地，最终于1963年加入马来西亚。",
+      "detailed_explanation": "Sejarah Sarawak:\n\n1. Zaman Kesultanan Brunei:\n- Sarawak berada di bawah naungan Kesultanan Brunei\n- Didiami pelbagai suku — Iban, Bidayuh, Melanau, Penan, Kenyah, Kayan\n\n2. Zaman Rajah Putih — Dinasti Brooke (1841–1946):\n- 1841: James Brooke menerima Sarawak daripada Sultan Brunei sebagai ganjaran membantu menumpas pemberontakan\n- James Brooke menjadi Rajah Sarawak pertama\n- Charles Brooke (1868–1917): mengembangkan wilayah Sarawak\n- Charles Vyner Brooke (1917–1946): Rajah Putih terakhir\n\n3. Pendudukan Jepun (1941–1945):\n- Jepun menduduki Sarawak semasa Perang Dunia Kedua\n- Kuching menjadi pusat pentadbiran Jepun\n\n4. Penyerahan kepada British (1946):\n- Charles Vyner Brooke menyerahkan Sarawak kepada British Crown\n- Sarawak menjadi Tanah Jajahan Mahkota British\n- Ada penentangan — Gabenor Duncan Stewart dibunuh oleh penentang penyerahan\n\n5. Penyertaan dalam Malaysia (1963):\n- 18 Perkara Sarawak — syarat perlindungan hak rakyat Sarawak\n- Sarawak menyertai Malaysia pada 16 September 1963\n- Abdul Rahman Ya'kub dan Abdul Taib Mahmud antara pemimpin awal\n\n18 Perkara Sarawak (antara lain):\n- Agama: tiada agama rasmi\n- Bahasa: Bahasa Melayu dan Bahasa Inggeris sebagai bahasa rasmi\n- Autonomi: kawalan ke atas tanah dan sumber alam",
+      "important_dates": [
+        {"year": "1841", "event": "James Brooke menjadi Rajah Sarawak pertama"},
+        {"year": "1941", "event": "Jepun menduduki Sarawak"},
+        {"year": "1946", "event": "Sarawak diserahkan kepada British Crown"},
+        {"year": "1963 (16 September)", "event": "Sarawak menyertai Malaysia"}
+      ],
+      "historical_figures": [
+        {"name": "James Brooke", "role": "Rajah Putih pertama Sarawak (1841–1868)"},
+        {"name": "Charles Brooke", "role": "Rajah Putih kedua Sarawak (1868–1917)"},
+        {"name": "Charles Vyner Brooke", "role": "Rajah Putih terakhir Sarawak (1917–1946)"}
+      ],
+      "related_topics": ["malaysia_formation", "sabah_history", "british_colonialism"],
+      "quiz_questions": [
+        {
+          "id": "q_sarawak_1",
+          "question": "Siapakah yang dikenali sebagai 'Rajah Putih' pertama Sarawak?",
+          "question_en": "Who was known as the first 'White Rajah' of Sarawak?",
+          "type": "mcq",
+          "options": ["Charles Brooke", "Charles Vyner Brooke", "James Brooke", "Francis Light"],
+          "answer": 2,
+          "explanation": "James Brooke menjadi Rajah Sarawak pertama pada tahun 1841 setelah menerima Sarawak daripada Sultan Brunei sebagai ganjaran membantu menumpas pemberontakan."
+        },
+        {
+          "id": "q_sarawak_2",
+          "question": "Sarawak terus berada di bawah pemerintahan keluarga Brooke sehingga tahun 1946.",
+          "question_en": "Sarawak remained under the Brooke family's rule until 1946.",
+          "type": "truefalse",
+          "answer": true,
+          "explanation": "Benar. Dinasti Brooke memerintah Sarawak dari 1841 hingga 1946 apabila Charles Vyner Brooke menyerahkan Sarawak kepada kerajaan British."
+        }
+      ]
+    }
+  ]
+}

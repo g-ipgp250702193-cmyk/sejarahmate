@@ -1,0 +1,25 @@
+{
+  "name": "sejarahmate-ai",
+  "version": "1.0.0",
+  "description": "SejarahMate AI — Rule-based History Chatbot for Malaysian Students",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "node-telegram-bot-api": "^0.64.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": ["history", "chatbot", "education", "malaysia", "sejarah"],
+  "author": "SejarahMate AI",
+  "license": "MIT"
+}

@@ -1,0 +1,117 @@
+{
+  "category": "Historical Thinking Skills",
+  "topics": [
+    {
+      "id": "historical_thinking",
+      "title": "Kemahiran Pemikiran Sejarah",
+      "title_en": "Historical Thinking Skills",
+      "title_zh": "历史思维技能",
+      "keywords": ["kemahiran pemikiran sejarah", "kemahiran sejarah", "kps", "historical thinking", "historical thinking skills", "hts", "kronologi", "chronology", "sebab akibat", "cause effect", "empati sejarah", "historical empathy", "bukti sejarah", "historical evidence", "rasionaliti", "imaginasi sejarah", "历史思维", "历史思维技能"],
+      "short_explanation": "Kemahiran Pemikiran Sejarah (KPS) adalah kaedah berfikir yang digunakan oleh sejarawan untuk memahami, menganalisis dan mentafsir peristiwa sejarah secara kritis.",
+      "short_explanation_en": "Historical Thinking Skills (HTS) are thinking methods used by historians to understand, analyse and critically interpret historical events.",
+      "short_explanation_zh": "历史思维技能是历史学家用来批判性地理解、分析和解释历史事件的思维方法。",
+      "detailed_explanation": "Kemahiran Pemikiran Sejarah (KPS):\n\nTerdapat 6 Kemahiran Pemikiran Sejarah dalam kurikulum Malaysia:\n\n1. KRONOLOGI\nDefinisi: Kemahiran menyusun peristiwa mengikut urutan masa.\nContoh: Menyusun peristiwa kemerdekaan Malaysia dari 1946 hingga 1963.\nCara: Gunakan garis masa, susun mengikut tarikh.\n\n2. MENEROKA BUKTI\nDefinisi: Kemahiran menilai dan menggunakan sumber sejarah sebagai bukti.\nContoh: Menggunakan gambar, dokumen lama, artifak untuk membuktikan sesuatu peristiwa.\nJenis bukti: Sumber primer (sezaman) dan sumber sekunder (analisis kemudian).\n\n3. MEMBUAT INTERPRETASI\nDefinisi: Kemahiran membuat tafsiran tentang peristiwa sejarah berdasarkan bukti.\nContoh: Mentafsirkan sebab sebenar kejatuhan Melaka 1511.\n\n4. IMAGINASI SEJARAH\nDefinisi: Kemahiran membayangkan situasi pada zaman lampau berdasarkan bukti.\nContoh: Membayangkan kehidupan harian rakyat Melaka pada abad ke-15.\n\n5. EMPATI SEJARAH\nDefinisi: Kemahiran memahami perasaan, fikiran dan tindakan orang pada zaman lampau dalam konteks mereka.\nContoh: Memahami mengapa orang Melayu menentang Malayan Union 1946.\n\n6. RASIONALITI\nDefinisi: Kemahiran berfikir secara logik dan kritis tentang peristiwa sejarah.\nContoh: Menganalisis sama ada keputusan pemimpin sejarah adalah wajar dalam konteks zaman mereka.\n\nKepentingan KPS:\n- Membantu pelajar berfikir secara kritis\n- Mengelak pembelajaran hafalan semata-mata\n- Melatih kemahiran analisis dan penilaian\n- Mempersiapkan pelajar untuk KBAT (Kemahiran Berfikir Aras Tinggi)",
+      "important_dates": [],
+      "historical_figures": [],
+      "related_topics": ["kbat_history", "independence_malaya", "melaka_sultanate"],
+      "quiz_questions": [
+        {
+          "id": "q_kps_1",
+          "question": "Kemahiran menyusun peristiwa mengikut urutan masa dipanggil...",
+          "question_en": "The skill of arranging events in chronological order is called...",
+          "type": "mcq",
+          "options": ["Empati Sejarah", "Kronologi", "Rasionaliti", "Imaginasi Sejarah"],
+          "answer": 1,
+          "explanation": "Kronologi ialah kemahiran menyusun peristiwa sejarah mengikut urutan masa yang betul — dari yang paling awal hingga paling terkini."
+        },
+        {
+          "id": "q_kps_2",
+          "question": "Empati Sejarah bermaksud memahami perasaan dan tindakan orang pada zaman lampau dalam konteks mereka.",
+          "question_en": "Historical Empathy means understanding the feelings and actions of people in the past within their historical context.",
+          "type": "truefalse",
+          "answer": true,
+          "explanation": "Benar. Empati Sejarah ialah kemahiran memahami perasaan, fikiran dan tindakan orang pada zaman lampau berdasarkan konteks sosial, budaya dan politik zaman tersebut."
+        },
+        {
+          "id": "q_kps_3",
+          "question": "Berapa banyak Kemahiran Pemikiran Sejarah (KPS) yang terdapat dalam kurikulum Malaysia?",
+          "question_en": "How many Historical Thinking Skills (HTS) are in the Malaysian curriculum?",
+          "type": "mcq",
+          "options": ["4", "5", "6", "7"],
+          "answer": 2,
+          "explanation": "Terdapat 6 Kemahiran Pemikiran Sejarah (KPS) dalam kurikulum Malaysia: Kronologi, Meneroka Bukti, Membuat Interpretasi, Imaginasi Sejarah, Empati Sejarah, dan Rasionaliti."
+        }
+      ]
+    }
+  ],
+  "intents": [
+    {
+      "id": "greeting",
+      "patterns": ["hello", "hi", "helo", "hai", "selamat", "assalamualaikum", "salam", "good morning", "good afternoon", "你好", "您好"],
+      "response_key": "greeting"
+    },
+    {
+      "id": "help",
+      "patterns": ["help", "bantuan", "tolong", "boleh bantu", "apa yang boleh", "cara guna", "how to use", "instructions", "帮助", "怎么用"],
+      "response_key": "help"
+    },
+    {
+      "id": "quiz_start",
+      "patterns": ["kuiz", "quiz", "cuba soalan", "start quiz", "begin quiz", "mula kuiz", "soalan kuiz", "quiz sejarah", "测验", "小测验"],
+      "response_key": "quiz_prompt"
+    },
+    {
+      "id": "topic_list",
+      "patterns": ["topik", "topic", "senarai", "list", "apa topik", "what topics", "categories", "kategori", "pilih topik", "主题", "话题列表"],
+      "response_key": "topic_list"
+    },
+    {
+      "id": "timeline",
+      "patterns": ["garis masa", "timeline", "tarikh", "kronologi", "chronology", "urutan", "sequence", "when", "bila", "时间线", "年表"],
+      "response_key": "timeline_prompt"
+    },
+    {
+      "id": "language_switch",
+      "patterns": ["tukar bahasa", "change language", "pilih bahasa", "select language", "language selection", "bahasa pilihan", "语言选择", "切换语言"],
+      "response_key": "language_prompt"
+    },
+    {
+      "id": "teacher_help",
+      "patterns": ["guru", "teacher", "cikgu", "tolong guru", "contact teacher", "hubungi guru", "help teacher", "老师"],
+      "response_key": "teacher_escalation"
+    },
+    {
+      "id": "thanks",
+      "patterns": ["terima kasih", "thank you", "thanks", "tq", "syukran", "谢谢", "多谢"],
+      "response_key": "thanks"
+    },
+    {
+      "id": "farewell",
+      "patterns": ["bye", "selamat tinggal", "goodbye", "daah", "sampai jumpa", "chao", "再见", "拜拜"],
+      "response_key": "farewell"
+    },
+    {
+      "id": "what_is_history",
+      "patterns": ["apa itu sejarah", "what is history", "definisi sejarah", "definition of history", "maksud sejarah", "什么是历史", "历史是什么"],
+      "response_key": "what_is_history"
+    }
+  ],
+  "static_responses": {
+    "greeting": "Salam sejahtera! 👋 Saya **SejarahMate AI**, pembantu pembelajaran Sejarah anda!\n\nSaya boleh membantu anda:\n📚 Mempelajari topik Sejarah\n🧠 Mengambil kuiz interaktif\n📅 Melihat garis masa sejarah\n🌐 Bahasa: BM, English, 中文\n\nApakah yang ingin anda pelajari hari ini?",
+    "greeting_en": "Greetings! 👋 I am **SejarahMate AI**, your History learning assistant!\n\nI can help you:\n📚 Learn History topics\n🧠 Take interactive quizzes\n📅 View historical timelines\n🌐 Languages: BM, English, 中文\n\nWhat would you like to learn today?",
+    "greeting_zh": "你好！👋 我是 **SejarahMate AI**，您的历史学习助手！\n\n我可以帮助您：\n📚 学习历史主题\n🧠 参加互动测验\n📅 查看历史时间线\n🌐 语言：马来语、英语、中文\n\n您今天想学什么？",
+    "help": "🆘 **Cara Menggunakan SejarahMate AI:**\n\n1. **Tanya soalan** — Taip soalan Sejarah anda terus\n2. **Pilih topik** — Klik butang topik yang tersedia\n3. **Ambil kuiz** — Taip 'kuiz' atau klik butang Kuiz\n4. **Lihat garis masa** — Taip 'garis masa' atau nama topik\n5. **Tukar bahasa** — Klik pilihan bahasa di atas\n\n💡 **Tips:** Cuba taip kata kunci seperti 'Melaka', 'Merdeka', 'WW2', atau 'nasionalisme'",
+    "topic_list": "📚 **Topik-Topik Sejarah yang Tersedia:**\n\n🇲🇾 **Sejarah Malaysia**\n• Kesultanan Melayu Melaka\n• Penjajahan British\n• Malayan Union 1946\n• Kemerdekaan 1957\n• Pembentukan Malaysia 1963\n\n🏔️ **Sejarah Sabah & Sarawak**\n• Sejarah Sabah\n• Sejarah Sarawak\n\n🌏 **Sejarah Dunia**\n• Perang Dunia Kedua\n• Tamadun Mesir Purba\n• Nasionalisme\n• Kolonialisme\n\n🧠 **Kemahiran Sejarah**\n• Kemahiran Pemikiran Sejarah (KPS)\n\nTaip nama topik atau klik butang untuk mula!",
+    "quiz_prompt": "🎯 **Kuiz Sejarah!**\n\nPilih topik kuiz anda:\n1. 🇲🇾 Kesultanan Melayu Melaka\n2. 🏛️ Penjajahan British\n3. 📜 Kemerdekaan Malaysia\n4. 🌏 Perang Dunia Kedua\n5. 🎲 Kuiz Umum (Pelbagai Topik)\n\nTaip nombor atau nama topik untuk mula!",
+    "timeline_prompt": "📅 **Garis Masa Sejarah**\n\nTopik garis masa yang tersedia:\n• Garis masa Melaka\n• Garis masa Kemerdekaan Malaysia\n• Garis masa Pembentukan Malaysia\n• Garis masa Perang Dunia Kedua\n\nTaip nama topik untuk melihat garis masanya!",
+    "language_prompt": "🌐 **Pilihan Bahasa / Language Selection / 语言选择**\n\n1. 🇲🇾 Bahasa Melayu\n2. 🇬🇧 English\n3. 🇨🇳 中文 (Mandarin)\n\nKlik atau taip pilihan bahasa anda.",
+    "teacher_escalation": "👨‍🏫 **Hubungi Guru**\n\nIngin mendapatkan bantuan daripada guru Sejarah?\n\nℹ️ Ciri hubungan guru belum ditetapkan dalam sistem ini. Sila hubungi guru Sejarah anda secara terus untuk bantuan lanjut.\n\nSaya boleh membantu anda dengan:\n✅ Penerangan topik Sejarah\n✅ Latihan soalan\n✅ Kuiz interaktif\n\nApakah topik yang memerlukan penerangan?",
+    "thanks": "Sama-sama! 😊 Selamat belajar Sejarah! Jika ada soalan lain, saya sentiasa sedia membantu. 📚\n\n*You're welcome! Happy studying! I'm always here to help.*",
+    "farewell": "Selamat tinggal! 👋 Semoga berjaya dalam pelajaran Sejarah anda! Jumpa lagi di SejarahMate AI! 🇲🇾\n\n*Goodbye! Good luck with your History studies!*",
+    "what_is_history": "📖 **Apakah Sejarah?**\n\nSejarah ialah bidang ilmu yang mengkaji dan merakam peristiwa-peristiwa masa lampau manusia secara sistematik berdasarkan bukti-bukti yang ada.\n\n**Mengapa Sejarah penting?**\n1. Memahami asal-usul bangsa dan negara\n2. Belajar daripada kesilapan masa lalu\n3. Membentuk identiti kebangsaan\n4. Memahami sebab-akibat peristiwa semasa\n5. Melatih kemahiran berfikir kritis\n\n*History is the study of past human events based on available evidence. It helps us understand our origins, learn from mistakes, and build national identity.*",
+    "fallback": "Maaf, saya belum dapat memahami soalan anda dengan tepat. 😅\n\nCuba gunakan kata kunci Sejarah seperti:\n• Nama topik (contoh: 'Melaka', 'Merdeka', 'WW2')\n• Jenis aktiviti ('kuiz', 'garis masa', 'topik')\n• Konsep ('nasionalisme', 'kolonialisme')\n\nAtau pilih salah satu topik di bawah:",
+    "fallback_2": "Saya masih tidak dapat memahami soalan anda. 😔\n\nMungkin anda boleh:\n1. Cuba semak ejaan kata kunci\n2. Gunakan bahasa yang lebih mudah\n3. Pilih topik daripada senarai yang disediakan\n4. Hubungi guru Sejarah untuk bantuan lanjut\n\nKlik 'Bantuan' untuk panduan cara menggunakan SejarahMate AI.",
+    "academic_dishonesty": "Saya faham anda memerlukan bantuan! 😊\n\nNamun, saya tidak dapat menyiapkan tugasan atau peperiksaan bagi pihak anda.\n\nSaya boleh membantu anda dengan:\n✅ Menerangkan konsep dan topik\n✅ Memberikan contoh dan panduan\n✅ Latihan soalan untuk persediaan\n✅ Menjawab soalan spesifik tentang topik\n\nApakah topik yang ingin anda fahami dengan lebih mendalam?",
+    "out_of_scope": "Maaf, maklumat bagi topik ini belum tersedia dalam pangkalan pengetahuan SejarahMate AI. 😔\n\nAnda boleh:\n• Pilih topik lain daripada senarai yang ada\n• Hubungi guru Sejarah untuk maklumat lanjut\n• Semak buku teks Sejarah anda\n\nTopik yang tersedia: Sejarah Malaysia, Sabah & Sarawak, Sejarah Dunia, dan Kemahiran Pemikiran Sejarah."
+  }
+}

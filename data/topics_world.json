@@ -1,0 +1,190 @@
+{
+  "category": "World History and Ancient Civilizations",
+  "topics": [
+    {
+      "id": "world_war_2",
+      "title": "Perang Dunia Kedua (1939–1945)",
+      "title_en": "World War II (1939–1945)",
+      "title_zh": "第二次世界大战（1939–1945）",
+      "keywords": ["perang dunia kedua", "world war 2", "ww2", "wwii", "perang dunia 2", "nazi", "hitler", "jepun", "japan", "sekutu", "allies", "第二次世界大战"],
+      "short_explanation": "Perang Dunia Kedua (1939–1945) adalah konflik ketenteraan global terbesar dalam sejarah manusia, melibatkan kuasa Paksi (Jerman, Itali, Jepun) menentang Kuasa Berikat (Britain, Amerika Syarikat, Soviet Union dan lain-lain).",
+      "short_explanation_en": "World War II (1939–1945) was the largest global military conflict in human history, involving the Axis powers (Germany, Italy, Japan) against the Allied powers (Britain, USA, Soviet Union and others).",
+      "short_explanation_zh": "第二次世界大战（1939-1945年）是人类历史上最大的全球军事冲突，轴心国（德国、意大利、日本）与盟国（英国、美国、苏联等）之间的战争。",
+      "detailed_explanation": "Perang Dunia Kedua:\n\nSebab-Sebab Perang:\n1. Kebangkitan Nazi di Jerman — Adolf Hitler menjadi Fuhrer\n2. Dasar expansionist Jerman, Itali dan Jepun\n3. Perjanjian Munich 1938 — dasar appeasement gagal\n4. Pencerobohan Jerman ke atas Poland (1 September 1939)\n5. Ketidakpuasan terhadap Perjanjian Versailles 1919\n\nPeristiwa Utama:\n- 1939: Jerman menyerang Poland — Britain dan Perancis isytihar perang\n- 1940: Kejatuhan Perancis — Operasi Dunkirk\n- 1941: Jerman menyerang Soviet Union (Operasi Barbarossa); Jepun menyerang Pearl Harbor\n- 1944: D-Day — pencerobohan Normandy oleh Berikat\n- 1945 (Mei): Jerman menyerah kalah\n- 1945 (Ogos): Bom atom di Hiroshima & Nagasaki — Jepun menyerah\n\nKesan Perang:\n- Anggaran 70-85 juta kematian\n- Holocaust — pembunuhan 6 juta Yahudi oleh Nazi\n- Penubuhan PBB (United Nations) 1945\n- Bermulanya Perang Dingin antara AS dan Soviet Union\n- Keruntuhan empayar kolonial — gelombang kemerdekaan di Asia dan Afrika\n\nPengaruh Terhadap Asia Tenggara:\n- Jepun menduduki Asia Tenggara (1941–1945)\n- Kejatuhan Singapura 1942 — kelemahan British terdedah\n- Mendorong semangat nasionalisme dan gerakan kemerdekaan",
+      "important_dates": [
+        {"year": "1939 (1 September)", "event": "Jerman menyerang Poland — Perang Dunia Kedua bermula"},
+        {"year": "1941 (7 Disember)", "event": "Jepun menyerang Pearl Harbor, AS memasuki perang"},
+        {"year": "1942 (15 Februari)", "event": "Kejatuhan Singapura kepada Jepun"},
+        {"year": "1944 (6 Jun)", "event": "D-Day — pencerobohan Normandy oleh Berikat"},
+        {"year": "1945 (6 & 9 Ogos)", "event": "Bom atom dijatuhkan di Hiroshima dan Nagasaki"},
+        {"year": "1945 (2 September)", "event": "Jepun menyerah kalah — Perang Dunia Kedua berakhir"}
+      ],
+      "historical_figures": [
+        {"name": "Adolf Hitler", "role": "Pemimpin Nazi Jerman, mencetuskan Perang Dunia Kedua di Eropah"},
+        {"name": "Winston Churchill", "role": "PM Britain, memimpin pertahanan Britain"},
+        {"name": "Franklin D. Roosevelt", "role": "Presiden Amerika Syarikat semasa perang"},
+        {"name": "Joseph Stalin", "role": "Pemimpin Soviet Union, memimpin pertahanan terhadap Jerman"},
+        {"name": "Hirohito", "role": "Maharaja Jepun semasa Perang Dunia Kedua"}
+      ],
+      "related_topics": ["world_war_1", "cold_war", "independence_malaya"],
+      "quiz_questions": [
+        {
+          "id": "q_ww2_1",
+          "question": "Apakah peristiwa yang mencetuskan Perang Dunia Kedua?",
+          "question_en": "What event triggered World War II?",
+          "type": "mcq",
+          "options": [
+            "Jepun menyerang Pearl Harbor",
+            "Jerman menyerang Poland",
+            "Pembunuhan Archduke Franz Ferdinand",
+            "Kejatuhan Perancis"
+          ],
+          "answer": 1,
+          "explanation": "Perang Dunia Kedua dicetuskan oleh pencerobohan Jerman ke atas Poland pada 1 September 1939, yang mendorong Britain dan Perancis mengisytiharkan perang terhadap Jerman."
+        },
+        {
+          "id": "q_ww2_2",
+          "question": "Bom atom dijatuhkan ke atas bandar mana di Jepun?",
+          "question_en": "On which Japanese cities were atomic bombs dropped?",
+          "type": "mcq",
+          "options": [
+            "Tokyo dan Osaka",
+            "Hiroshima dan Nagasaki",
+            "Kyoto dan Hiroshima",
+            "Nagasaki dan Tokyo"
+          ],
+          "answer": 1,
+          "explanation": "Amerika Syarikat menjatuhkan bom atom di Hiroshima (6 Ogos 1945) dan Nagasaki (9 Ogos 1945), yang akhirnya memaksa Jepun menyerah kalah."
+        },
+        {
+          "id": "q_ww2_3",
+          "question": "Perang Dunia Kedua berakhir pada tahun 1945.",
+          "question_en": "World War II ended in 1945.",
+          "type": "truefalse",
+          "answer": true,
+          "explanation": "Benar. Perang Dunia Kedua berakhir pada tahun 1945 — Jerman menyerah pada Mei 1945 dan Jepun menyerah pada 2 September 1945."
+        }
+      ]
+    },
+    {
+      "id": "ancient_egypt",
+      "title": "Tamadun Mesir Purba",
+      "title_en": "Ancient Egyptian Civilization",
+      "title_zh": "古埃及文明",
+      "keywords": ["mesir", "egypt", "tamadun mesir", "firaun", "pharaoh", "piramid", "pyramid", "nil", "nile", "hieroglif", "hieroglyphics", "古埃及"],
+      "short_explanation": "Tamadun Mesir Purba berkembang di sepanjang Sungai Nil sejak 3100 SM. Ia terkenal dengan Firaun, Piramid, hieroglif, dan pencapaian dalam sains dan teknologi.",
+      "short_explanation_en": "Ancient Egyptian civilization flourished along the Nile River since 3100 BCE. It is famous for its Pharaohs, Pyramids, hieroglyphics, and achievements in science and technology.",
+      "short_explanation_zh": "古埃及文明自公元前3100年起在尼罗河沿岸繁荣发展。它以法老、金字塔、象形文字以及科学和技术方面的成就而闻名。",
+      "detailed_explanation": "Tamadun Mesir Purba:\n\nLatarbelakang:\n- Berkembang di Lembah Sungai Nil, Afrika Utara\n- Bermula sekitar 3100 SM dengan penyatuan Mesir Atas dan Bawah\n- Berlangsung selama lebih 3,000 tahun\n\nCiri-ciri Tamadun:\n1. Sistem Pemerintahan: Firaun memerintah sebagai raja-tuhan\n2. Agama: Politeistik — banyak dewa (Ra, Osiris, Isis, Horus)\n3. Sistem Tulisan: Hieroglif — sistem tulisan menggunakan simbol\n4. Petanian: Bergantung pada banjiran Sungai Nil untuk pertanian\n5. Pembinaan: Piramid, Sphinx, kuil-kuil besar\n\nPencapaian Utama:\n- Piramid Agung Giza (Khufu) — salah satu keajaiban dunia purba\n- Matematik dan geometri untuk pembinaan\n- Perubatan — pembedahan dan mumifikasi\n- Kalendar 365 hari\n- Pengetahuan astronomi\n\nKejatuhan:\n- Diserang pelbagai kuasa — Assyria, Parsi, Macedonia (Alexander Agung)\n- 30 SM: Mesir ditakluki Rom di bawah Julius Caesar dan Mark Antony (Cleopatra)\n\nPeninggalan:\n- Piramid dan Sphinx masih berdiri hingga hari ini\n- Hieroglif menjadi asas kajian sejarah kuno\n- Pengetahuan perubatan dan saintifik mempengaruhi tamadun kemudian",
+      "important_dates": [
+        {"year": "~3100 SM", "event": "Penyatuan Mesir Atas dan Bawah — permulaan dinasti"},
+        {"year": "~2560 SM", "event": "Pembinaan Piramid Agung Giza"},
+        {"year": "332 SM", "event": "Alexander Agung menakluki Mesir"},
+        {"year": "30 SM", "event": "Mesir menjadi sebahagian daripada Empayar Rom"}
+      ],
+      "historical_figures": [
+        {"name": "Firaun Khufu (Cheops)", "role": "Membina Piramid Agung Giza (~2560 SM)"},
+        {"name": "Ramesses II (Ramesses Agung)", "role": "Salah satu Firaun terkuat, memerintah ~1279–1213 SM"},
+        {"name": "Cleopatra VII", "role": "Firaun terakhir Mesir, rapat dengan Julius Caesar dan Mark Antony"},
+        {"name": "Tutankhamun", "role": "Firaun muda terkenal, makamnya ditemui hampir utuh pada 1922"}
+      ],
+      "related_topics": ["ancient_civilizations", "mesopotamia"],
+      "quiz_questions": [
+        {
+          "id": "q_egypt_1",
+          "question": "Di sepanjang sungai apakah Tamadun Mesir Purba berkembang?",
+          "question_en": "Along which river did Ancient Egyptian civilization flourish?",
+          "type": "mcq",
+          "options": ["Sungai Tigris", "Sungai Indus", "Sungai Nil", "Sungai Huang He"],
+          "answer": 2,
+          "explanation": "Tamadun Mesir Purba berkembang di sepanjang Sungai Nil. Banjiran tahunan Sungai Nil membekalkan tanah yang subur untuk pertanian."
+        },
+        {
+          "id": "q_egypt_2",
+          "question": "Hieroglif ialah sistem tulisan Mesir Purba yang menggunakan simbol-simbol.",
+          "question_en": "Hieroglyphics is the Ancient Egyptian writing system that uses symbols.",
+          "type": "truefalse",
+          "answer": true,
+          "explanation": "Benar. Hieroglif adalah sistem tulisan Mesir Purba yang menggunakan simbol-simbol gambar untuk mewakili bunyi dan makna."
+        }
+      ]
+    },
+    {
+      "id": "nationalism_concept",
+      "title": "Nasionalisme",
+      "title_en": "Nationalism",
+      "title_zh": "民族主义",
+      "keywords": ["nasionalisme", "nationalism", "semangat kebangsaan", "patriotisme", "patriotism", "national identity", "民族主义"],
+      "short_explanation": "Nasionalisme ialah fahaman yang mengutamakan kepentingan, identiti dan kedaulatan sesebuah bangsa atau negara. Ia memainkan peranan penting dalam gerakan kemerdekaan di seluruh dunia.",
+      "short_explanation_en": "Nationalism is an ideology that prioritizes the interests, identity and sovereignty of a nation or country. It played a crucial role in independence movements around the world.",
+      "short_explanation_zh": "民族主义是一种优先考虑国家利益、身份认同和主权的意识形态。它在全球独立运动中发挥了重要作用。",
+      "detailed_explanation": "Nasionalisme:\n\nDefinisi:\nNasionalisme ialah satu ideologi atau gerakan yang menekankan kepentingan, budaya, bahasa dan sejarah sesebuah bangsa. Ia mendorong semangat perpaduan dalam kalangan rakyat sesebuah negara.\n\nJenis-Jenis Nasionalisme:\n1. Nasionalisme Liberal — menekankan hak individu dalam konteks kebangsaan\n2. Nasionalisme Konservatif — menekankan tradisi dan budaya warisan\n3. Nasionalisme Etnik — berdasarkan perkongsian etnik atau keturunan\n4. Nasionalisme Agama — menggabungkan identiti agama dengan kebangsaan\n\nNasionalisme di Tanah Melayu:\n- Bermula pada tahun 1920-an melalui persuratkhabaran Melayu\n- Majalah Al-Imam (1906–1908) menyebarkan idea pembaharuan\n- Kesatuan Melayu Singapura (1926) — organisasi Melayu moden pertama\n- Gerakan nasionalisme semakin kuat selepas Perang Dunia Kedua\n\nPeranan Nasionalisme dalam Kemerdekaan:\n- Mendorong rakyat bersatu melawan penjajahan\n- Membentuk identiti kebangsaan bersama\n- Menggerakkan parti-parti politik — UMNO, MCA, MIC\n- Akhirnya membawa kepada kemerdekaan 1957\n\nWarisan:\nNasionalisme yang sihat menggalakkan rakyat mencintai negara, menghormati warisan budaya dan bekerja sama untuk kemajuan negara.",
+      "important_dates": [
+        {"year": "1906", "event": "Majalah Al-Imam diterbitkan — menyebarkan idea pembaharuan Islam di Tanah Melayu"},
+        {"year": "1926", "event": "Kesatuan Melayu Singapura ditubuhkan — organisasi Melayu moden pertama"},
+        {"year": "1946", "event": "UMNO ditubuhkan sebagai teras gerakan nasionalisme Melayu"}
+      ],
+      "historical_figures": [
+        {"name": "Dato' Onn Jaafar", "role": "Nasionalis Melayu, pengasas UMNO"},
+        {"name": "Tunku Abdul Rahman", "role": "Pemimpin nasionalisme Melayu, membawa kemerdekaan"},
+        {"name": "Mohandas Gandhi", "role": "Pemimpin gerakan kemerdekaan India melalui cara aman"}
+      ],
+      "related_topics": ["independence_malaya", "british_colonialism", "malayan_union"],
+      "quiz_questions": [
+        {
+          "id": "q_nationalism_1",
+          "question": "Apakah maksud nasionalisme?",
+          "question_en": "What is the meaning of nationalism?",
+          "type": "mcq",
+          "options": [
+            "Fahaman yang mengutamakan kepentingan peribadi",
+            "Fahaman yang mengutamakan kepentingan, identiti dan kedaulatan sesebuah bangsa",
+            "Fahaman yang menentang semua kerajaan",
+            "Fahaman yang menekankan perdagangan antarabangsa"
+          ],
+          "answer": 1,
+          "explanation": "Nasionalisme ialah fahaman yang mengutamakan kepentingan, identiti dan kedaulatan sesebuah bangsa atau negara. Ia memainkan peranan penting dalam gerakan kemerdekaan."
+        }
+      ]
+    },
+    {
+      "id": "colonialism_concept",
+      "title": "Penjajahan (Kolonialisme)",
+      "title_en": "Colonialism",
+      "title_zh": "殖民主义",
+      "keywords": ["penjajahan", "kolonialisme", "colonialism", "imperialism", "imperialisme", "penjajah", "colony", "殖民主义"],
+      "short_explanation": "Kolonialisme ialah sistem di mana negara-negara kuasa besar menguasai, mengeksploitasi dan mentadbir negara-negara lain untuk keuntungan ekonomi dan kuasa politik.",
+      "short_explanation_en": "Colonialism is a system where powerful nations control, exploit and administer other countries for economic gain and political power.",
+      "short_explanation_zh": "殖民主义是强大国家为了经济利益和政治权力而控制、剥削和管理其他国家的制度。",
+      "detailed_explanation": "Kolonialisme:\n\nDefinisi:\nKolonialisme berlaku apabila sesebuah negara yang lebih kuat menguasai negara lain, mengeksploitasi sumber alamnya, dan mentadbir penduduknya.\n\nJenis Penjajahan:\n1. Penjajahan langsung — pentadbiran terus oleh penjajah\n2. Penjajahan tidak langsung — menggunakan pemimpin tempatan sebagai perantara\n3. Penjajahan ekonomi — mengeksploitasi sumber tanpa pentadbiran langsung\n\nSebab Penjajahan:\n1. Ekonomi — mencari sumber mentah dan pasaran baru\n2. Politik — memperluas kuasa dan pengaruh\n3. Agama — misi Kristianisasi (bagi Eropah)\n4. Teknologi — kelebihan teknologi ketenteraan\n\nKesan Penjajahan:\nPositif (menurut perspektif penjajah): infrastruktur, pendidikan moden, perubatan\nNegatif (kesan kepada tanah jajahan):\n- Eksploitasi sumber alam\n- Pengasingan kaum (divide and rule)\n- Penindasan budaya dan identiti tempatan\n- Ketidakseimbangan ekonomi\n\nContoh Penjajahan di Asia Tenggara:\n- British di Tanah Melayu, Burma, India\n- Belanda di Indonesia\n- Perancis di Indo-China (Vietnam, Kemboja, Laos)\n- Sepanyol dan kemudian Amerika di Filipina",
+      "important_dates": [
+        {"year": "1498", "event": "Vasco da Gama tiba di India — era penjajahan Portugis bermula"},
+        {"year": "1511", "event": "Portugis menakluki Melaka — permulaan penjajahan di Asia Tenggara"},
+        {"year": "1786", "event": "British mula menguasai Tanah Melayu (Pulau Pinang)"},
+        {"year": "1957–1960s", "event": "Gelombang kemerdekaan — penamat era penjajahan di Asia dan Afrika"}
+      ],
+      "historical_figures": [
+        {"name": "Vasco da Gama", "role": "Peneroka Portugis yang membuka laluan ke India (1498)"},
+        {"name": "Alfonso de Albuquerque", "role": "Panglima Portugis yang menakluki Melaka (1511)"},
+        {"name": "Cecil Rhodes", "role": "Pengembang empayar British di Afrika"}
+      ],
+      "related_topics": ["british_colonialism", "independence_malaya", "nationalism_concept"],
+      "quiz_questions": [
+        {
+          "id": "q_colonialism_1",
+          "question": "Apakah yang dimaksudkan dengan kolonialisme?",
+          "question_en": "What is colonialism?",
+          "type": "mcq",
+          "options": [
+            "Sistem perdagangan bebas antara negara",
+            "Sistem di mana negara kuat menguasai dan mengeksploitasi negara lain",
+            "Sistem pemerintahan demokrasi",
+            "Sistem pembahagian tanah kepada petani"
+          ],
+          "answer": 1,
+          "explanation": "Kolonialisme ialah sistem di mana negara-negara kuasa besar menguasai, mengeksploitasi dan mentadbir negara-negara lain untuk keuntungan ekonomi dan kuasa politik."
+        }
+      ]
+    }
+  ]
+}

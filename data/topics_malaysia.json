@@ -1,0 +1,247 @@
+{
+  "category": "Malaysian History",
+  "topics": [
+    {
+      "id": "melaka_sultanate",
+      "title": "Kesultanan Melayu Melaka",
+      "title_en": "Malacca Sultanate",
+      "title_zh": "马六甲苏丹国",
+      "keywords": ["melaka", "malacca", "kesultanan", "sultan", "parameswara", "melaka sultanate", "kerajaan melaka", "马六甲"],
+      "short_explanation": "Kesultanan Melayu Melaka diasaskan oleh Parameswara sekitar tahun 1400 Masihi dan menjadi pusat perdagangan dan penyebaran Islam yang penting di Asia Tenggara.",
+      "short_explanation_en": "The Malacca Sultanate was founded by Parameswara around 1400 CE and became a major centre of trade and the spread of Islam in Southeast Asia.",
+      "short_explanation_zh": "马六甲苏丹国由拜里迷苏剌于公元1400年左右建立，成为东南亚重要的贸易中心和伊斯兰教传播中心。",
+      "detailed_explanation": "Kesultanan Melayu Melaka diasaskan oleh Parameswara, seorang putera dari Palembang, Sumatera sekitar tahun 1400 Masihi. Melaka berkembang pesat sebagai pusat perdagangan antarabangsa kerana kedudukannya yang strategik di Selat Melaka.\n\nFaktor Kekuatan Melaka:\n1. Kedudukan geografi yang strategik di Selat Melaka\n2. Pelabuhan bebas cukai yang menarik pedagang\n3. Penyebaran Islam memperkukuhkan hubungan dengan pedagang Arab dan India\n4. Sistem Temenggung dan Bendahara yang cekap\n5. Hubungan diplomatik dengan China (Laksamana Cheng Ho)\n\nZaman Kegemilangan:\nPada zaman pemerintahan Sultan Mansur Shah (1459–1477), Melaka mencapai zaman kegemilangan. Lebih 84 bahasa digunakan di pelabuhan Melaka.\n\nKejatuhan Melaka:\nPada tahun 1511, Portugis di bawah pimpinan Alfonso de Albuquerque menakluki Melaka. Faktor kejatuhan termasuk:\n1. Perselisihan dalaman dalam istana\n2. Kekuatan tentera Portugis yang lebih moden\n3. Pengkhianatan pembesar tertentu\n4. Kelemahan pertahanan\n\nWarisan Melaka:\nKesultanan Melaka mewariskan bahasa Melayu sebagai lingua franca, sistem pemerintahan beraja, dan penyebaran Islam di Nusantara.",
+      "important_dates": [
+        {"year": "~1400", "event": "Parameswara mengasaskan Kesultanan Melayu Melaka"},
+        {"year": "1414", "event": "Parameswara memeluk Islam, bergelar Megat Iskandar Shah"},
+        {"year": "1459–1477", "event": "Zaman kegemilangan Melaka di bawah Sultan Mansur Shah"},
+        {"year": "1511", "event": "Portugis menakluki Melaka"}
+      ],
+      "historical_figures": [
+        {"name": "Parameswara", "role": "Pengasas Kesultanan Melayu Melaka"},
+        {"name": "Sultan Mansur Shah", "role": "Sultan yang membawa Melaka ke zaman kegemilangan"},
+        {"name": "Tun Perak", "role": "Bendahara yang memperkukuhkan kuasa Melaka"},
+        {"name": "Alfonso de Albuquerque", "role": "Panglima Portugis yang menakluki Melaka"}
+      ],
+      "related_topics": ["british_colonialism", "independence_malaya", "islam_malaysia"],
+      "quiz_questions": [
+        {
+          "id": "q_melaka_1",
+          "question": "Siapakah pengasas Kesultanan Melayu Melaka?",
+          "question_en": "Who founded the Malacca Sultanate?",
+          "type": "mcq",
+          "options": ["Parameswara", "Sultan Mansur Shah", "Tun Perak", "Alfonso de Albuquerque"],
+          "answer": 0,
+          "explanation": "Parameswara, seorang putera dari Palembang, Sumatera, mengasaskan Kesultanan Melayu Melaka sekitar tahun 1400 Masihi."
+        },
+        {
+          "id": "q_melaka_2",
+          "question": "Pada tahun berapakah Portugis menakluki Melaka?",
+          "question_en": "In what year did the Portuguese conquer Malacca?",
+          "type": "mcq",
+          "options": ["1400", "1456", "1511", "1641"],
+          "answer": 2,
+          "explanation": "Portugis di bawah pimpinan Alfonso de Albuquerque menakluki Melaka pada tahun 1511."
+        },
+        {
+          "id": "q_melaka_3",
+          "question": "Melaka terletak secara strategik di Selat Melaka, menjadikannya pusat perdagangan penting.",
+          "question_en": "Malacca was strategically located at the Strait of Malacca, making it an important trading centre.",
+          "type": "truefalse",
+          "answer": true,
+          "explanation": "Benar. Kedudukan strategik Melaka di Selat Melaka membolehkannya menguasai laluan perdagangan antara Lautan Hindi dan Laut China Selatan."
+        }
+      ]
+    },
+    {
+      "id": "british_colonialism",
+      "title": "Penjajahan British di Tanah Melayu",
+      "title_en": "British Colonialism in Malaya",
+      "title_zh": "英国殖民马来亚",
+      "keywords": ["british", "penjajahan", "inggeris", "kolonial", "colonialism", "pax britannica", "residen", "perak treaty", "pangkor", "federated malay states", "negeri-negeri melayu bersekutu", "英国殖民"],
+      "short_explanation": "British mula menjajah Tanah Melayu bermula dengan penguasaan Pulau Pinang (1786), diikuti Singapura (1819) dan Melaka (1824), kemudian meluas ke seluruh Semenanjung melalui Sistem Residen.",
+      "short_explanation_en": "The British began colonising Malaya starting with Penang (1786), followed by Singapore (1819) and Malacca (1824), then expanded throughout the Peninsula through the Resident System.",
+      "short_explanation_zh": "英国从占领槟城（1786年）开始殖民马来亚，随后是新加坡（1819年）和马六甲（1824年），然后通过驻扎官制度扩展到整个半岛。",
+      "detailed_explanation": "Penjajahan British di Tanah Melayu bermula secara berperingkat:\n\n1. Penguasaan Negeri-Negeri Selat:\n- 1786: Francis Light menguasai Pulau Pinang\n- 1819: Stamford Raffles mendirikan Singapura\n- 1824: Perjanjian Anglo-Belanda, Melaka diserahkan kepada British\n- 1826: Penubuhan Negeri-Negeri Selat (Straits Settlements)\n\n2. Sistem Residen (1874):\n- Perjanjian Pangkor (1874) dengan Sultan Perak\n- British melantik Residen di Perak, Selangor, Pahang, Negeri Sembilan\n- Residen menasihati sultan dalam semua perkara KECUALI adat istiadat Melayu dan agama Islam\n\n3. Negeri-Negeri Melayu Bersekutu (1896):\n- Perak, Selangor, Pahang, Negeri Sembilan bersekutu\n- Ibu pejabat di Kuala Lumpur\n- Residen-Jeneral mengetuai pentadbiran\n\n4. Negeri-Negeri Melayu Tidak Bersekutu:\n- Johor, Kedah, Kelantan, Terengganu, Perlis\n- British mempengaruhi namun tidak menyekutu secara rasmi sehingga 1909-1914\n\nDasar Pecah dan Perintah:\nBritish menggunakan dasar 'Pecah dan Perintah' — membawa masuk buruh Cina dan India untuk mengisi sektor ekonomi tertentu, mewujudkan pengasingan kaum.",
+      "important_dates": [
+        {"year": "1786", "event": "Francis Light menguasai Pulau Pinang"},
+        {"year": "1819", "event": "Stamford Raffles mendirikan Singapura"},
+        {"year": "1824", "event": "Perjanjian Anglo-Belanda — Melaka diserahkan kepada British"},
+        {"year": "1874", "event": "Perjanjian Pangkor — permulaan Sistem Residen di Perak"},
+        {"year": "1896", "event": "Penubuhan Negeri-Negeri Melayu Bersekutu"}
+      ],
+      "historical_figures": [
+        {"name": "Francis Light", "role": "Menguasai Pulau Pinang bagi pihak British (1786)"},
+        {"name": "Stamford Raffles", "role": "Mendirikan Singapura (1819)"},
+        {"name": "James Birch", "role": "Residen British pertama di Perak, dibunuh 1875"},
+        {"name": "Sultan Abdullah (Perak)", "role": "Menandatangani Perjanjian Pangkor 1874"}
+      ],
+      "related_topics": ["malayan_union", "independence_malaya", "melaka_sultanate"],
+      "quiz_questions": [
+        {
+          "id": "q_british_1",
+          "question": "Siapakah yang menguasai Pulau Pinang bagi pihak British pada tahun 1786?",
+          "question_en": "Who took control of Penang for the British in 1786?",
+          "type": "mcq",
+          "options": ["Stamford Raffles", "James Birch", "Francis Light", "William Farquhar"],
+          "answer": 2,
+          "explanation": "Francis Light menguasai Pulau Pinang pada tahun 1786, menjadikannya tanah jajahan British pertama di Tanah Melayu."
+        },
+        {
+          "id": "q_british_2",
+          "question": "Perjanjian Pangkor 1874 memperkenalkan Sistem Residen di negeri mana?",
+          "question_en": "The 1874 Pangkor Treaty introduced the Resident System in which state?",
+          "type": "mcq",
+          "options": ["Selangor", "Perak", "Pahang", "Negeri Sembilan"],
+          "answer": 1,
+          "explanation": "Perjanjian Pangkor 1874 antara British dan Sultan Perak memperkenalkan Sistem Residen di Perak, dengan James Birch sebagai Residen pertama."
+        }
+      ]
+    },
+    {
+      "id": "malayan_union",
+      "title": "Malayan Union 1946",
+      "title_en": "Malayan Union 1946",
+      "title_zh": "马来亚联盟1946",
+      "keywords": ["malayan union", "kesatuan melayu", "1946", "orang melayu bantah", "umno", "dato onn", "perlembagaan", "王权削弱"],
+      "short_explanation": "Malayan Union 1946 adalah cadangan British yang menghapuskan kuasa raja-raja Melayu dan memberikan kerakyatan kepada semua kaum. Ia ditentang hebat oleh orang Melayu dan digantikan dengan Persekutuan Tanah Melayu 1948.",
+      "short_explanation_en": "The Malayan Union 1946 was a British proposal that abolished Malay rulers' powers and granted citizenship to all races. It was strongly opposed by Malays and replaced by the Federation of Malaya 1948.",
+      "short_explanation_zh": "1946年马来亚联盟是英国的提案，废除了马来统治者的权力，并向所有种族授予公民权。它遭到马来人的强烈反对，并被1948年马来亚联合邦取代。",
+      "detailed_explanation": "Selepas Perang Dunia Kedua, British mencadangkan penubuhan Malayan Union pada 1 April 1946.\n\nCiri-ciri Malayan Union:\n1. Semua negeri Melayu, Pulau Pinang dan Melaka disatukan\n2. Kuasa raja-raja Melayu dihapuskan — raja hanya berkuasa dalam hal agama Islam\n3. Kerakyatan diberikan kepada semua yang lahir di Tanah Melayu atau telah bermastautin 10 tahun\n4. Gabenor British memegang kuasa tertinggi\n5. Singapura tidak termasuk dalam Malayan Union\n\nPententangan Orang Melayu:\n1. Orang Melayu marah — raja-raja dipaksa menandatangani perjanjian melalui Mcmichael\n2. Dato' Onn Jaafar menggerakkan penentangan\n3. Pertubuhan Melayu bersatu — UMNO ditubuhkan 11 Mac 1946\n4. Orang Melayu berpakaian hitam sebagai tanda protes\n\nPerbezaan dengan Persekutuan Tanah Melayu 1948:\n- Persekutuan 1948 memulihkan kuasa raja-raja Melayu\n- Syarat kerakyatan diperketatkan — hak istimewa Melayu diiktiraf\n- Sistem persekutuan menggantikan penyatuan penuh\n- Gabenor British digantikan Pesuruhjaya Tinggi",
+      "important_dates": [
+        {"year": "1946 (1 April)", "event": "Malayan Union diisytiharkan secara rasmi"},
+        {"year": "1946 (11 Mac)", "event": "UMNO ditubuhkan oleh Dato' Onn Jaafar di Johor Bahru"},
+        {"year": "1948 (1 Februari)", "event": "Persekutuan Tanah Melayu menggantikan Malayan Union"}
+      ],
+      "historical_figures": [
+        {"name": "Dato' Onn Jaafar", "role": "Pengasas UMNO, memimpin penentangan terhadap Malayan Union"},
+        {"name": "Sir Harold McMichael", "role": "Wakil British yang mendapatkan tandatangan raja-raja Melayu"},
+        {"name": "Malcolm MacDonald", "role": "Gabenor British yang melaksanakan Malayan Union"}
+      ],
+      "related_topics": ["british_colonialism", "independence_malaya", "federation_malaya_1948"],
+      "quiz_questions": [
+        {
+          "id": "q_mu_1",
+          "question": "Apakah organisasi yang ditubuhkan untuk menentang Malayan Union?",
+          "question_en": "What organisation was formed to oppose the Malayan Union?",
+          "type": "mcq",
+          "options": ["MCA", "MIC", "UMNO", "PUTERA-AMCJA"],
+          "answer": 2,
+          "explanation": "UMNO (United Malays National Organisation) ditubuhkan pada 11 Mac 1946 oleh Dato' Onn Jaafar untuk menentang Malayan Union."
+        },
+        {
+          "id": "q_mu_2",
+          "question": "Malayan Union 1946 memulihkan kuasa raja-raja Melayu.",
+          "question_en": "The Malayan Union 1946 restored the powers of Malay rulers.",
+          "type": "truefalse",
+          "answer": false,
+          "explanation": "Salah. Malayan Union 1946 MENGHAPUSKAN kuasa raja-raja Melayu. Kuasa raja-raja baru dipulihkan melalui Persekutuan Tanah Melayu 1948."
+        }
+      ]
+    },
+    {
+      "id": "independence_malaya",
+      "title": "Kemerdekaan Tanah Melayu 1957",
+      "title_en": "Independence of Malaya 1957",
+      "title_zh": "马来亚独立1957",
+      "keywords": ["kemerdekaan", "merdeka", "1957", "tunku", "independence", "31 ogos", "persekutuan", "perikatan", "alliance", "马来亚独立"],
+      "short_explanation": "Tanah Melayu mencapai kemerdekaan daripada British pada 31 Ogos 1957. Tunku Abdul Rahman ialah Perdana Menteri pertama. Kemerdekaan dicapai melalui perjuangan diplomasi dan rundingan.",
+      "short_explanation_en": "Malaya achieved independence from Britain on 31 August 1957. Tunku Abdul Rahman was the first Prime Minister. Independence was achieved through diplomatic struggle and negotiation.",
+      "short_explanation_zh": "马来亚于1957年8月31日从英国获得独立。东姑阿都拉曼是第一任首相。独立是通过外交斗争和谈判实现的。",
+      "detailed_explanation": "Proses Kemerdekaan Tanah Melayu:\n\n1. Latar Belakang:\n- Selepas Perang Dunia Kedua, gerakan kemerdekaan di Asia semakin kuat\n- British bersedia memberikan kemerdekaan secara berperingkat\n- Darurat Komunis (1948–1960) menjadi cabaran\n\n2. Perjuangan Kemerdekaan:\n- Gabungan Perikatan (UMNO-MCA-MIC) menunjukkan perpaduan kaum\n- Pilihan raya 1955 — Perikatan menang 51/52 kerusi\n- Rundingan di London untuk kemerdekaan\n\n3. Perjanjian London 1956:\n- Tunku Abdul Rahman memimpin delegasi ke London\n- British bersetuju memberikan kemerdekaan\n- Tarikh ditetapkan: 31 Ogos 1957\n\n4. Kemerdekaan 31 Ogos 1957:\n- Upacara di Stadium Merdeka, Kuala Lumpur\n- Tunku Abdul Rahman melaungkan 'Merdeka!' tujuh kali\n- Persekutuan Tanah Melayu lahir sebagai negara merdeka\n\n5. Tokoh-Tokoh Kemerdekaan:\n- Tunku Abdul Rahman: 'Bapa Malaysia', PM pertama\n- Tun Abdul Razak: 'Bapa Pembangunan'\n- Tun Tan Cheng Lock: Pemimpin MCA\n- Tun V.T. Sambanthan: Pemimpin MIC",
+      "important_dates": [
+        {"year": "1955", "event": "Pilihan raya persekutuan pertama — Perikatan menang besar"},
+        {"year": "1956", "event": "Rundingan London — British bersetuju memberikan kemerdekaan"},
+        {"year": "1957 (31 Ogos)", "event": "Kemerdekaan Tanah Melayu diisytiharkan"}
+      ],
+      "historical_figures": [
+        {"name": "Tunku Abdul Rahman", "role": "Bapa Malaysia, Perdana Menteri pertama Tanah Melayu"},
+        {"name": "Tun Abdul Razak", "role": "Bapa Pembangunan Malaysia, PM kedua"},
+        {"name": "Tun Tan Cheng Lock", "role": "Pengasas MCA, mewakili masyarakat Cina"},
+        {"name": "Tun V.T. Sambanthan", "role": "Presiden MIC, mewakili masyarakat India"}
+      ],
+      "related_topics": ["malayan_union", "malaysia_formation", "british_colonialism"],
+      "quiz_questions": [
+        {
+          "id": "q_merdeka_1",
+          "question": "Pada tarikh berapakah Tanah Melayu mencapai kemerdekaan?",
+          "question_en": "On what date did Malaya achieve independence?",
+          "type": "mcq",
+          "options": ["16 September 1963", "31 Ogos 1957", "1 Februari 1948", "11 Mac 1946"],
+          "answer": 1,
+          "explanation": "Tanah Melayu mencapai kemerdekaan pada 31 Ogos 1957 melalui perjuangan diplomasi Perikatan yang diketuai oleh Tunku Abdul Rahman."
+        },
+        {
+          "id": "q_merdeka_2",
+          "question": "Siapakah Perdana Menteri pertama Tanah Melayu?",
+          "question_en": "Who was the first Prime Minister of Malaya?",
+          "type": "mcq",
+          "options": ["Tun Abdul Razak", "Tunku Abdul Rahman", "Dato' Onn Jaafar", "Tun Hussein Onn"],
+          "answer": 1,
+          "explanation": "Tunku Abdul Rahman Putra Al-Haj ialah Perdana Menteri pertama Tanah Melayu dan kemudiannya Malaysia. Beliau dikenali sebagai 'Bapa Malaysia'."
+        },
+        {
+          "id": "q_merdeka_3",
+          "question": "Kemerdekaan Tanah Melayu dicapai melalui perjuangan bersenjata.",
+          "question_en": "Malayan independence was achieved through armed struggle.",
+          "type": "truefalse",
+          "answer": false,
+          "explanation": "Salah. Kemerdekaan Tanah Melayu dicapai melalui perjuangan diplomasi dan rundingan aman, berbeza dengan beberapa negara lain yang merdeka melalui revolusi bersenjata."
+        }
+      ]
+    },
+    {
+      "id": "malaysia_formation",
+      "title": "Pembentukan Malaysia 1963",
+      "title_en": "Formation of Malaysia 1963",
+      "title_zh": "马来西亚的成立1963",
+      "keywords": ["malaysia", "pembentukan malaysia", "formation of malaysia", "1963", "singapura", "16 september", "formation", "malaysia day", "hari malaysia", "马来西亚成立"],
+      "short_explanation": "Malaysia dibentuk pada 16 September 1963 melalui penggabungan Tanah Melayu, Singapura, Sabah dan Sarawak. Singapura kemudiannya berpisah pada 9 Ogos 1965.",
+      "short_explanation_en": "Malaysia was formed on 16 September 1963 through the merger of Malaya, Singapore, Sabah and Sarawak. Singapore later separated on 9 August 1965.",
+      "short_explanation_zh": "马来西亚于1963年9月16日通过马来亚、新加坡、沙巴和砂拉越的合并而成立。新加坡后来于1965年8月9日分离。",
+      "detailed_explanation": "Pembentukan Malaysia:\n\n1. Cadangan Tunku (1961):\n- Tunku Abdul Rahman mencadangkan penggabungan Tanah Melayu, Singapura, Brunei, Sabah, Sarawak\n- Brunei menolak cadangan ini\n\n2. Laporan Cobbold (1962):\n- Suruhanjaya Cobbold menyiasat sokongan rakyat Sabah dan Sarawak\n- Majoriti menyokong penggabungan dengan syarat-syarat tertentu\n\n3. Perjanjian Malaysia (1963):\n- Ditandatangani di London pada 9 Julai 1963\n- Malaysia diwujudkan secara rasmi pada 16 September 1963\n\n4. Tentangan Konfrontasi:\n- Indonesia di bawah Sukarno melancarkan Konfrontasi (1963–1966)\n- Filipina menuntut Sabah atas nama Kesultanan Sulu\n\n5. Pemisahan Singapura (1965):\n- Perselisihan antara UMNO dan PAP tentang 'Malaysian Malaysia'\n- Singapura berpisah pada 9 Ogos 1965\n- Lee Kuan Yew menjadi PM Singapura\n\n20 Perkara Sabah & 18 Perkara Sarawak:\n- Syarat-syarat penyertaan Sabah dan Sarawak dalam Malaysia\n- Termasuk: bahasa, agama, hak imigresen, autonomi tertentu",
+      "important_dates": [
+        {"year": "1961", "event": "Tunku mencadangkan konsep Malaysia"},
+        {"year": "1962", "event": "Laporan Cobbold disempurnakan"},
+        {"year": "1963 (9 Julai)", "event": "Perjanjian Malaysia ditandatangani di London"},
+        {"year": "1963 (16 September)", "event": "Malaysia dibentuk secara rasmi"},
+        {"year": "1965 (9 Ogos)", "event": "Singapura berpisah daripada Malaysia"}
+      ],
+      "historical_figures": [
+        {"name": "Tunku Abdul Rahman", "role": "Pencetus dan pelaksana idea pembentukan Malaysia"},
+        {"name": "Lee Kuan Yew", "role": "PM Singapura, bersetuju dengan penggabungan kemudian berpisah"},
+        {"name": "Donald Stephens", "role": "Pemimpin Sabah yang menyokong pembentukan Malaysia"},
+        {"name": "Abdul Taib Mahmud", "role": "Pemimpin Sarawak"}
+      ],
+      "related_topics": ["independence_malaya", "sabah_history", "sarawak_history"],
+      "quiz_questions": [
+        {
+          "id": "q_malaysia_1",
+          "question": "Pada tarikh berapakah Malaysia dibentuk secara rasmi?",
+          "question_en": "On what date was Malaysia officially formed?",
+          "type": "mcq",
+          "options": ["31 Ogos 1957", "16 September 1963", "9 Ogos 1965", "9 Julai 1963"],
+          "answer": 1,
+          "explanation": "Malaysia dibentuk secara rasmi pada 16 September 1963 melalui penggabungan Tanah Melayu, Singapura, Sabah dan Sarawak."
+        },
+        {
+          "id": "q_malaysia_2",
+          "question": "Singapura berpisah daripada Malaysia pada tahun 1965.",
+          "question_en": "Singapore separated from Malaysia in 1965.",
+          "type": "truefalse",
+          "answer": true,
+          "explanation": "Benar. Singapura berpisah daripada Malaysia pada 9 Ogos 1965 akibat perselisihan politik antara PAP dan UMNO."
+        },
+        {
+          "id": "q_malaysia_3",
+          "question": "Negara manakah yang TIDAK menyertai pembentukan Malaysia 1963?",
+          "question_en": "Which country did NOT join the formation of Malaysia 1963?",
+          "type": "mcq",
+          "options": ["Sabah", "Sarawak", "Brunei", "Singapura"],
+          "answer": 2,
+          "explanation": "Brunei menolak cadangan untuk menyertai Malaysia. Hanya Tanah Melayu, Singapura, Sabah dan Sarawak yang membentuk Malaysia pada 1963."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SejarahMate AI — Jelajah Sejarah, Teroka Ilmu!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══ HEADER ══════════════════════════════════════════════════════════ -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-icon">🏛️</span>
+        <div>
+          <h1 class="brand-name">SejarahMate AI</h1>
+          <p class="brand-tagline">Jelajah Sejarah, Teroka Ilmu!</p>
+        </div>
+      </div>
+      <div class="header-controls">
+        <div class="lang-selector">
+          <button class="lang-btn active" data-lang="bm">🇲🇾 BM</button>
+          <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+          <button class="lang-btn" data-lang="zh">🇨🇳 中文</button>
+        </div>
+        <button class="btn-icon" id="btn-clear" title="Clear Chat">🗑️</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══ MAIN LAYOUT ══════════════════════════════════════════════════════ -->
+  <div class="app-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">📚 Topik Sejarah</h3>
+        <div class="topic-list" id="topic-list">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">⚡ Aktiviti Pantas</h3>
+        <button class="quick-btn" data-msg="kuiz">🎯 Mula Kuiz</button>
+        <button class="quick-btn" data-msg="garis masa kemerdekaan">📅 Garis Masa</button>
+        <button class="quick-btn" data-msg="topik">📋 Senarai Topik</button>
+        <button class="quick-btn" data-msg="bantuan">🆘 Bantuan</button>
+      </div>
+
+      <div class="sidebar-section telegram-info">
+        <h3 class="sidebar-title">📱 Telegram</h3>
+        <p class="sidebar-note">Bot Telegram belum dikonfigurasi. Lihat <code>README.md</code> untuk setup.</p>
+      </div>
+    </aside>
+
+    <!-- Chat Window -->
+    <main class="chat-area">
+      <div class="chat-window" id="chat-window">
+        <!-- Welcome bubble -->
+        <div class="chat-bubble bot" id="welcome-msg">
+          <div class="bubble-avatar">🏛️</div>
+          <div class="bubble-content">
+            <p>Salam sejahtera! 👋 Saya <strong>SejarahMate AI</strong>, pembantu pembelajaran Sejarah anda!</p>
+            <p>Saya boleh membantu anda:</p>
+            <ul>
+              <li>📖 Mempelajari topik Sejarah</li>
+              <li>🎯 Mengambil kuiz interaktif</li>
+              <li>📅 Melihat garis masa sejarah</li>
+              <li>🌐 BM · English · 中文</li>
+            </ul>
+            <p>Apakah yang ingin anda pelajari hari ini?</p>
+            <div class="suggestion-chips" id="welcome-chips">
+              <button class="chip" data-msg="Kesultanan Melayu Melaka">🏰 Kesultanan Melaka</button>
+              <button class="chip" data-msg="Kemerdekaan Tanah Melayu 1957">🇲🇾 Kemerdekaan 1957</button>
+              <button class="chip" data-msg="Pembentukan Malaysia 1963">🌏 Malaysia 1963</button>
+              <button class="chip" data-msg="Perang Dunia Kedua">⚔️ Perang Dunia</button>
+              <button class="chip" data-msg="kuiz">🎯 Mula Kuiz</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suggestion bar -->
+      <div class="suggestion-bar" id="suggestion-bar"></div>
+
+      <!-- Input area -->
+      <div class="chat-input-area">
+        <div class="input-wrapper">
+          <input type="text" id="chat-input" placeholder="Taip soalan Sejarah anda di sini..." autocomplete="off" />
+          <button id="btn-send" aria-label="Send">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+        <p class="input-hint">💡 Cuba: "Apa itu nasionalisme?", "Garis masa Melaka", atau taip "kuiz"</p>
+      </div>
+    </main>
+
+  </div><!-- /app-layout -->
+
+  <!-- ══ QUIZ MODAL ═══════════════════════════════════════════════════════ -->
+  <div id="quiz-modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2>🎯 Kuiz Sejarah</h2>
+        <button class="modal-close" id="quiz-modal-close">✕</button>
+      </div>
+      <div class="modal-body" id="quiz-modal-body">
+        <!-- Quiz content rendered here -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
