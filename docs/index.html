@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>SejarahMate AI — Jelajah Sejarah, Teroka Ilmu!</title>
+<meta name="description" content="SejarahMate AI — Chatbot pembelajaran Sejarah interaktif untuk pelajar Malaysia. Topik, kuiz, garis masa dan sokongan tiga bahasa (BM, English, 中文)."/>
+<meta name="keywords" content="sejarah malaysia, chatbot sejarah, kuiz sejarah, history malaysia, sejarah SPM, kemerdekaan, melaka"/>
+<meta name="author" content="SejarahMate AI"/>
+<meta property="og:title" content="SejarahMate AI — Jelajah Sejarah, Teroka Ilmu!"/>
+<meta property="og:description" content="Chatbot pembelajaran Sejarah interaktif — topik, kuiz, garis masa dalam BM, English &amp; 中文"/>
+<meta property="og:type" content="website"/>
+<link rel="canonical" href="https://g-ipgp250702193-cmyk.github.io/sejarahmate/"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#142B49;--teal:#178F92;--gold:#D4AD68;
+  --white:#F7F8FA;--bg:#f0f2f5;--card:#fff;
+  --border:#dde2e8;--text:#1a2535;--muted:#5a6a7e;
+  --green:#1a9e5f;--red:#d94040;
+}
+html,body{height:100%;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.65;color:var(--text);background:var(--bg)}
+
+/* ── HEADER ── */
+.app-header{background:var(--navy);color:#fff;padding:0 1.2rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.header-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;gap:.8rem}
+.brand{display:flex;align-items:center;gap:.65rem}
+.brand-icon{font-size:1.8rem}
+.brand-name{font-size:1.2rem;font-weight:700;color:var(--gold);letter-spacing:.3px}
+.brand-tag{font-size:.72rem;color:rgba(255,255,255,.65);margin-top:-2px}
+.hctrls{display:flex;align-items:center;gap:.6rem}
+.lang-sel{display:flex;gap:.25rem;background:rgba(255,255,255,.1);padding:.25rem;border-radius:7px}
+.lang-btn{background:transparent;border:none;color:rgba(255,255,255,.75);padding:.22rem .5rem;border-radius:5px;cursor:pointer;font-size:.78rem;transition:background .15s,color .15s}
+.lang-btn:hover,.lang-btn.active{background:var(--teal);color:#fff}
+.btn-icon{background:rgba(255,255,255,.1);border:none;color:#fff;width:34px;height:34px;border-radius:7px;cursor:pointer;font-size:.95rem;transition:background .15s}
+.btn-icon:hover{background:rgba(255,255,255,.2)}
+
+/* ── LAYOUT ── */
+.app-layout{max-width:1180px;margin:0 auto;display:flex;height:calc(100vh - 60px);gap:0}
+
+/* ── SIDEBAR ── */
+.sidebar{width:240px;min-width:200px;background:var(--card);border-right:1px solid var(--border);overflow-y:auto;padding:.9rem .7rem;display:flex;flex-direction:column;gap:1.1rem}
+.sb-title{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:.5rem;padding-bottom:.3rem;border-bottom:1px solid var(--border)}
+.topic-grp-lbl{font-size:.66rem;color:var(--muted);margin:.45rem 0 .2rem;text-transform:uppercase;letter-spacing:.5px}
+.topic-btn{display:block;width:100%;text-align:left;background:transparent;border:1px solid transparent;color:var(--text);padding:.4rem .6rem;border-radius:7px;cursor:pointer;font-size:.8rem;transition:background .12s,border-color .12s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topic-btn:hover{background:rgba(23,143,146,.08);border-color:rgba(23,143,146,.25);color:var(--teal)}
+.qbtn{display:block;width:100%;text-align:left;background:transparent;border:1px solid var(--border);color:var(--text);padding:.4rem .6rem;border-radius:7px;cursor:pointer;font-size:.8rem;margin-bottom:.28rem;transition:background .12s}
+.qbtn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.sb-note{font-size:.73rem;color:var(--muted);line-height:1.5}
+.sb-note a{color:var(--teal);text-decoration:none}
+.sb-note a:hover{text-decoration:underline}
+.wa-btn{display:inline-flex;align-items:center;gap:.4rem;background:#25D366;color:#fff;border:none;padding:.45rem .8rem;border-radius:8px;cursor:pointer;font-size:.8rem;font-weight:600;text-decoration:none;margin-top:.4rem;transition:background .15s}
+.wa-btn:hover{background:#1da851}
+.tg-section{margin-top:auto}
+
+/* ── CHAT ── */
+.chat-area{flex:1;display:flex;flex-direction:column;overflow:hidden;background:var(--bg)}
+.chat-win{flex:1;overflow-y:auto;padding:1.2rem 1rem;display:flex;flex-direction:column;gap:.9rem;scroll-behavior:smooth}
+.chat-bubble{display:flex;gap:.6rem;max-width:84%;animation:fadeUp .22s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.chat-bubble.bot{align-self:flex-start}
+.chat-bubble.user{align-self:flex-end;flex-direction:row-reverse}
+.b-avatar{width:34px;height:34px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;margin-top:2px}
+.chat-bubble.user .b-avatar{background:var(--teal)}
+.b-content{background:var(--card);border:1px solid var(--border);border-radius:4px 14px 14px 14px;padding:.65rem .9rem;font-size:.88rem;line-height:1.65;max-width:100%;word-break:break-word;box-shadow:0 1px 6px rgba(20,43,73,.07)}
+.chat-bubble.user .b-content{background:var(--teal);color:#fff;border:none;border-radius:14px 4px 14px 14px}
+.b-content p{margin-bottom:.35rem}
+.b-content p:last-child{margin-bottom:0}
+.b-content ul{padding-left:1.1rem;margin:.25rem 0}
+.b-content li{margin-bottom:.12rem}
+.b-content strong{color:var(--navy)}
+.chat-bubble.user .b-content strong{color:var(--gold)}
+.b-content em{color:var(--muted);font-style:italic}
+.b-content hr{border:none;border-top:1px solid var(--border);margin:.5rem 0}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.5rem}
+.chip{background:rgba(23,143,146,.1);border:1px solid rgba(23,143,146,.3);color:var(--teal);padding:.25rem .65rem;border-radius:18px;cursor:pointer;font-size:.78rem;font-weight:500;transition:background .12s,color .12s;white-space:nowrap}
+.chip:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+
+/* suggestion bar */
+.sugg-bar{display:flex;flex-wrap:wrap;gap:.35rem;padding:.45rem 1rem;background:var(--card);border-top:1px solid var(--border);min-height:40px}
+.sugg-bar:empty{display:none}
+.sugg-bar .chip{font-size:.76rem}
+
+/* input */
+.chat-in-area{background:var(--card);border-top:1px solid var(--border);padding:.65rem 1rem .75rem}
+.in-wrap{display:flex;gap:.45rem;align-items:center}
+#chat-input{flex:1;border:2px solid var(--border);border-radius:9px;padding:.55rem .85rem;font-size:.88rem;outline:none;transition:border-color .15s;background:var(--white);color:var(--text)}
+#chat-input:focus{border-color:var(--teal)}
+#btn-send{width:40px;height:40px;background:var(--teal);border:none;border-radius:9px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s,transform .1s;flex-shrink:0}
+#btn-send:hover{background:var(--navy)}
+#btn-send:active{transform:scale(.93)}
+.in-hint{font-size:.7rem;color:var(--muted);margin-top:.35rem}
+
+/* typing */
+.typing-indicator .b-content{padding:.55rem .8rem}
+.typing-dots{display:flex;gap:4px;align-items:center;height:14px}
+.typing-dots span{width:6px;height:6px;background:var(--muted);border-radius:50%;animation:bounce 1.2s infinite}
+.typing-dots span:nth-child(2){animation-delay:.2s}
+.typing-dots span:nth-child(3){animation-delay:.4s}
+@keyframes bounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-5px)}}
+
+/* ── MODAL ── */
+.modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center}
+.modal.hidden{display:none}
+.modal-bk{position:absolute;inset:0;background:rgba(20,43,73,.55);backdrop-filter:blur(3px)}
+.modal-box{position:relative;background:var(--card);border-radius:12px;width:95%;max-width:550px;max-height:92vh;overflow-y:auto;box-shadow:0 8px 40px rgba(0,0,0,.22)}
+.modal-hdr{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.1rem;border-bottom:1px solid var(--border);background:var(--navy);color:#fff;border-radius:12px 12px 0 0}
+.modal-hdr h2{font-size:1rem;color:var(--gold)}
+.modal-x{background:transparent;border:none;color:#fff;cursor:pointer;font-size:1rem;padding:.2rem .4rem;border-radius:4px}
+.modal-x:hover{background:rgba(255,255,255,.15)}
+.modal-body{padding:1.1rem}
+.qprog{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.qpbar{height:5px;background:var(--border);border-radius:3px;margin-bottom:.9rem;overflow:hidden}
+.qpfill{height:100%;background:var(--teal);border-radius:3px;transition:width .4s ease}
+.qtag{font-size:.7rem;background:rgba(212,173,104,.2);color:#8a6620;padding:.12rem .45rem;border-radius:16px;display:inline-block;margin-bottom:.5rem}
+.qtext{font-size:.95rem;font-weight:600;color:var(--navy);margin-bottom:.9rem;line-height:1.5}
+.qopts{display:flex;flex-direction:column;gap:.45rem;margin-bottom:.9rem}
+.qopt{display:flex;align-items:center;gap:.65rem;padding:.6rem .85rem;border:2px solid var(--border);border-radius:9px;cursor:pointer;font-size:.87rem;transition:border-color .12s,background .12s;background:var(--white);text-align:left;width:100%}
+.qopt:hover:not(:disabled){border-color:var(--teal);background:rgba(23,143,146,.06)}
+.qopt.correct{border-color:var(--green);background:rgba(26,158,95,.1);color:#0f6b3f}
+.qopt.wrong{border-color:var(--red);background:rgba(217,64,64,.08);color:#a02020}
+.qopt:disabled{cursor:default}
+.qtf{display:flex;gap:.5rem}
+.qtfb{flex:1;padding:.6rem;border:2px solid var(--border);border-radius:9px;cursor:pointer;font-size:.9rem;font-weight:600;transition:all .12s;background:var(--white)}
+.qtfb:first-child:hover:not(:disabled){border-color:var(--green);color:var(--green)}
+.qtfb:last-child:hover:not(:disabled){border-color:var(--red);color:var(--red)}
+.qtfb.correct{border-color:var(--green);background:rgba(26,158,95,.12);color:#0f6b3f}
+.qtfb.wrong{border-color:var(--red);background:rgba(217,64,64,.08);color:#a02020}
+.qtfb:disabled{cursor:default}
+.qexpl{background:rgba(23,143,146,.08);border-left:3px solid var(--teal);padding:.6rem .85rem;border-radius:0 7px 7px 0;font-size:.83rem;color:var(--text);margin:.7rem 0;line-height:1.6}
+.hidden{display:none!important}
+.qnav{display:flex;justify-content:flex-end;gap:.5rem;margin-top:.9rem}
+.btn-p{background:var(--teal);color:#fff;border:none;padding:.55rem 1.3rem;border-radius:7px;cursor:pointer;font-size:.87rem;font-weight:600;transition:background .15s}
+.btn-p:hover{background:var(--navy)}
+.btn-s{background:transparent;color:var(--teal);border:2px solid var(--teal);padding:.55rem 1.1rem;border-radius:7px;cursor:pointer;font-size:.87rem;font-weight:600;transition:all .15s}
+.btn-s:hover{background:var(--teal);color:#fff}
+.qresult{text-align:center;padding:.9rem 0}
+.r-emoji{font-size:3rem;margin-bottom:.4rem}
+.r-score{font-size:1.9rem;font-weight:800;color:var(--navy);margin-bottom:.2rem}
+.r-pct{font-size:.95rem;color:var(--muted);margin-bottom:.6rem}
+.r-grade{font-size:1rem;font-weight:600;color:var(--teal);margin-bottom:1.1rem}
+.r-btns{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+
+/* scrollbar */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#c4cdd8;border-radius:3px}
+
+/* responsive */
+@media(max-width:760px){
+  .sidebar{display:none}
+  .chat-win{padding:.9rem .75rem}
+  .chat-bubble{max-width:93%}
+  .brand-tag{display:none}
+}
+@media(max-width:460px){
+  .brand-name{font-size:1rem}
+  .lang-btn{padding:.2rem .35rem;font-size:.72rem}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="app-header">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-icon">🏛️</span>
+      <div>
+        <div class="brand-name">SejarahMate AI</div>
+        <div class="brand-tag">Jelajah Sejarah, Teroka Ilmu!</div>
+      </div>
+    </div>
+    <div class="hctrls">
+      <div class="lang-sel">
+        <button class="lang-btn active" data-lang="bm">🇲🇾 BM</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+        <button class="lang-btn" data-lang="zh">🇨🇳 中文</button>
+      </div>
+      <button class="btn-icon" id="btn-clear" title="Clear Chat">🗑️</button>
+    </div>
+  </div>
+</header>
+
+<!-- LAYOUT -->
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div>
+      <div class="sb-title">📚 Topik Sejarah</div>
+      <div id="topic-list"></div>
+    </div>
+    <div>
+      <div class="sb-title">⚡ Aktiviti Pantas</div>
+      <button class="qbtn" data-msg="kuiz">🎯 Mula Kuiz</button>
+      <button class="qbtn" data-msg="garis masa kemerdekaan">📅 Garis Masa</button>
+      <button class="qbtn" data-msg="topik">📋 Senarai Topik</button>
+      <button class="qbtn" data-msg="bantuan">🆘 Bantuan</button>
+    </div>
+    <div class="tg-section">
+      <div class="sb-title">📱 Telegram Bot</div>
+      <p class="sb-note">Guna SejarahMate AI terus dalam Telegram!</p>
+      <a class="wa-btn" href="https://t.me/SejarahMate_AI_bot" target="_blank" rel="noopener" style="background:#2AABEE;margin-bottom:.4rem">
+        <span>✈️</span> @SejarahMate_AI_bot
+      </a>
+      <div class="sb-title" style="margin-top:.8rem">👨‍🏫 Hubungi Guru</div>
+      <p class="sb-note">Ada soalan yang memerlukan bantuan guru?</p>
+      <a class="wa-btn" href="https://wa.me/601110790301" target="_blank" rel="noopener">
+        <span>💬</span> WhatsApp Guru
+      </a>
+    </div>
+  </aside>
+
+  <!-- CHAT -->
+  <main class="chat-area">
+    <div class="chat-win" id="chat-win">
+      <!-- Welcome bubble -->
+      <div class="chat-bubble bot" id="welcome-msg">
+        <div class="b-avatar">🏛️</div>
+        <div class="b-content">
+          <p>Salam sejahtera! 👋 Saya <strong>SejarahMate AI</strong>, pembantu pembelajaran Sejarah anda!</p>
+          <p>Saya boleh membantu anda:</p>
+          <ul>
+            <li>📖 Mempelajari topik Sejarah</li>
+            <li>🎯 Mengambil kuiz interaktif</li>
+            <li>📅 Melihat garis masa sejarah</li>
+            <li>🌐 BM · English · 中文</li>
+          </ul>
+          <p>Apakah yang ingin anda pelajari hari ini?</p>
+          <div class="chips">
+            <button class="chip" data-msg="Kesultanan Melayu Melaka">🏰 Kesultanan Melaka</button>
+            <button class="chip" data-msg="Kemerdekaan Tanah Melayu 1957">🇲🇾 Kemerdekaan 1957</button>
+            <button class="chip" data-msg="Pembentukan Malaysia 1963">🌏 Malaysia 1963</button>
+            <button class="chip" data-msg="Perang Dunia Kedua">⚔️ Perang Dunia</button>
+            <button class="chip" data-msg="kuiz">🎯 Mula Kuiz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sugg-bar" id="sugg-bar"></div>
+
+    <div class="chat-in-area">
+      <div class="in-wrap">
+        <input type="text" id="chat-input" placeholder="Taip soalan Sejarah anda di sini..." autocomplete="off"/>
+        <button id="btn-send" aria-label="Send">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+      <p class="in-hint">💡 Cuba: "Apa itu nasionalisme?" · "Garis masa Melaka" · "kuiz" · "english"</p>
+    </div>
+  </main>
+</div>
+
+<!-- QUIZ MODAL -->
+<div id="quiz-modal" class="modal hidden">
+  <div class="modal-bk"></div>
+  <div class="modal-box">
+    <div class="modal-hdr">
+      <h2>🎯 Kuiz Sejarah</h2>
+      <button class="modal-x" id="quiz-close">✕</button>
+    </div>
+    <div class="modal-body" id="quiz-body"></div>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   SejarahMate AI — Standalone Single-File Application
+   Knowledge base + chatbot engine fully embedded.
+   No server required. Open directly in any browser.
+═══════════════════════════════════════════════════════════════ */
+'use strict';
+
+// ─── KNOWLEDGE BASE ──────────────────────────────────────────────────────────
+const KB_TOPICS = [
+  {
+    id:'melaka_sultanate',title:'Kesultanan Melayu Melaka',title_en:'Malacca Sultanate',title_zh:'马六甲苏丹国',
+    category:'Sejarah Malaysia',
+    keywords:['melaka','malacca','kesultanan','sultan','parameswara','melaka sultanate','kerajaan melaka','马六甲'],
+    short:'Kesultanan Melayu Melaka diasaskan oleh Parameswara sekitar tahun 1400 Masihi dan menjadi pusat perdagangan dan penyebaran Islam yang penting di Asia Tenggara.',
+    short_en:'The Malacca Sultanate was founded by Parameswara around 1400 CE and became a major centre of trade and the spread of Islam in Southeast Asia.',
+    short_zh:'马六甲苏丹国由拜里迷苏剌于公元1400年左右建立，成为东南亚重要的贸易中心和伊斯兰教传播中心。',
+    detail:'Kesultanan Melayu Melaka diasaskan oleh Parameswara, seorang putera dari Palembang, Sumatera sekitar tahun 1400 Masihi.\n\n**Faktor Kekuatan Melaka:**\n• Kedudukan geografi strategik di Selat Melaka\n• Pelabuhan bebas cukai menarik pedagang antarabangsa\n• Islam memperkukuhkan hubungan dengan pedagang Arab dan India\n• Sistem Temenggung dan Bendahara yang cekap\n• Hubungan diplomatik dengan China (Laksamana Cheng Ho)\n\n**Zaman Kegemilangan:**\nPada zaman Sultan Mansur Shah (1459–1477), Melaka mencapai kemuncak — lebih 84 bahasa digunakan di pelabuhannya.\n\n**Kejatuhan 1511:**\nPortugis di bawah Alfonso de Albuquerque menakluki Melaka. Faktor kejatuhan: perselisihan dalaman istana, kekuatan tentera Portugis, kelemahan pertahanan.',
+    dates:[
+      {y:'~1400',e:'Parameswara mengasaskan Kesultanan Melayu Melaka'},
+      {y:'1414',e:'Parameswara memeluk Islam, bergelar Megat Iskandar Shah'},
+      {y:'1459–1477',e:'Zaman kegemilangan Melaka di bawah Sultan Mansur Shah'},
+      {y:'1511',e:'Portugis menakluki Melaka'}
+    ],
+    figures:[
+      {n:'Parameswara',r:'Pengasas Kesultanan Melayu Melaka'},
+      {n:'Sultan Mansur Shah',r:'Sultan zaman kegemilangan Melaka'},
+      {n:'Tun Perak',r:'Bendahara yang memperkukuhkan kuasa Melaka'},
+      {n:'Alfonso de Albuquerque',r:'Panglima Portugis yang menakluki Melaka (1511)'}
+    ],
+    quiz:[
+      {id:'qm1',q:'Siapakah pengasas Kesultanan Melayu Melaka?',type:'mcq',opts:['Parameswara','Sultan Mansur Shah','Tun Perak','Alfonso de Albuquerque'],ans:0,expl:'Parameswara, putera dari Palembang Sumatera, mengasaskan Kesultanan Melayu Melaka sekitar tahun 1400 Masihi.'},
+      {id:'qm2',q:'Pada tahun berapakah Portugis menakluki Melaka?',type:'mcq',opts:['1400','1456','1511','1641'],ans:2,expl:'Portugis di bawah Alfonso de Albuquerque menakluki Melaka pada tahun 1511.'},
+      {id:'qm3',q:'Melaka terletak secara strategik di Selat Melaka, menjadikannya pusat perdagangan penting.',type:'tf',ans:true,expl:'Benar. Kedudukan di Selat Melaka membolehkan Melaka menguasai laluan perdagangan antara Lautan Hindi dan Laut China Selatan.'}
+    ]
+  },
+  {
+    id:'british_colonialism',title:'Penjajahan British di Tanah Melayu',title_en:'British Colonialism in Malaya',title_zh:'英国殖民马来亚',
+    category:'Sejarah Malaysia',
+    keywords:['british','penjajahan','inggeris','kolonial','colonialism','residen','pangkor','federated malay states','negeri-negeri melayu bersekutu','英国殖民'],
+    short:'British mula menjajah Tanah Melayu bermula dengan penguasaan Pulau Pinang (1786), Singapura (1819) dan Melaka (1824), kemudian meluas ke seluruh Semenanjung melalui Sistem Residen.',
+    short_en:'The British began colonising Malaya starting with Penang (1786), Singapore (1819) and Malacca (1824), then expanded through the Resident System.',
+    short_zh:'英国从占领槟城（1786年）开始殖民马来亚，随后通过驻扎官制度扩展到整个半岛。',
+    detail:'**Penguasaan Negeri-Negeri Selat:**\n• 1786: Francis Light menguasai Pulau Pinang\n• 1819: Stamford Raffles mendirikan Singapura\n• 1824: Perjanjian Anglo-Belanda — Melaka diserahkan kepada British\n• 1826: Penubuhan Negeri-Negeri Selat\n\n**Sistem Residen (1874):**\nPerjanjian Pangkor 1874 dengan Sultan Perak memperkenalkan Sistem Residen — British melantik penasihat di negeri-negeri Melayu kecuali dalam hal adat istiadat dan agama Islam.\n\n**Negeri-Negeri Melayu Bersekutu (1896):**\nPerak, Selangor, Pahang, Negeri Sembilan bersekutu dengan ibu pejabat di Kuala Lumpur.\n\n**Dasar Pecah dan Perintah:**\nBritish membawa buruh Cina (lombong bijih timah) dan India (ladang getah), mewujudkan pengasingan kaum yang membentuk masyarakat Malaysia hari ini.',
+    dates:[
+      {y:'1786',e:'Francis Light menguasai Pulau Pinang'},
+      {y:'1819',e:'Stamford Raffles mendirikan Singapura'},
+      {y:'1824',e:'Perjanjian Anglo-Belanda — Melaka diserahkan kepada British'},
+      {y:'1874',e:'Perjanjian Pangkor — Sistem Residen bermula di Perak'},
+      {y:'1896',e:'Penubuhan Negeri-Negeri Melayu Bersekutu'}
+    ],
+    figures:[
+      {n:'Francis Light',r:'Menguasai Pulau Pinang (1786)'},
+      {n:'Stamford Raffles',r:'Mendirikan Singapura (1819)'},
+      {n:'James Birch',r:'Residen British pertama di Perak, dibunuh 1875'},
+      {n:'Sultan Abdullah (Perak)',r:'Menandatangani Perjanjian Pangkor 1874'}
+    ],
+    quiz:[
+      {id:'qb1',q:'Siapakah yang menguasai Pulau Pinang bagi pihak British pada tahun 1786?',type:'mcq',opts:['Stamford Raffles','James Birch','Francis Light','William Farquhar'],ans:2,expl:'Francis Light menguasai Pulau Pinang pada 1786, menjadikannya tanah jajahan British pertama di Tanah Melayu.'},
+      {id:'qb2',q:'Perjanjian Pangkor 1874 memperkenalkan Sistem Residen di negeri mana?',type:'mcq',opts:['Selangor','Perak','Pahang','Negeri Sembilan'],ans:1,expl:'Perjanjian Pangkor 1874 antara British dan Sultan Perak memperkenalkan Sistem Residen di Perak.'}
+    ]
+  },
+  {
+    id:'malayan_union',title:'Malayan Union 1946',title_en:'Malayan Union 1946',title_zh:'马来亚联盟1946',
+    category:'Sejarah Malaysia',
+    keywords:['malayan union','kesatuan melayu','1946','umno','dato onn','penentangan melayu','马来亚联盟'],
+    short:'Malayan Union 1946 adalah cadangan British yang menghapuskan kuasa raja-raja Melayu. Ia ditentang hebat oleh orang Melayu dan digantikan dengan Persekutuan Tanah Melayu 1948.',
+    short_en:'The Malayan Union 1946 was a British proposal that abolished the powers of Malay rulers. It was strongly opposed and replaced by the Federation of Malaya 1948.',
+    short_zh:'1946年马来亚联盟废除了马来统治者的权力，遭到马来人强烈反对，被1948年马来亚联合邦取代。',
+    detail:'**Ciri-ciri Malayan Union (1 April 1946):**\n• Semua negeri Melayu, Pulau Pinang dan Melaka disatukan\n• Kuasa raja-raja Melayu DIHAPUSKAN — hanya berkuasa dalam hal agama Islam\n• Kerakyatan diberikan kepada semua yang lahir di Tanah Melayu atau bermastautin 10 tahun\n• Singapura tidak termasuk\n\n**Penentangan Orang Melayu:**\n• Dato\' Onn Jaafar menggerakkan penentangan seluruh negara\n• UMNO ditubuhkan 11 Mac 1946 di Johor Bahru\n• Orang Melayu berpakaian hitam sebagai tanda berkabung\n\n**Perbezaan dengan Persekutuan 1948:**\n• Persekutuan 1948 memulihkan kuasa raja-raja Melayu\n• Syarat kerakyatan diperketatkan\n• Hak istimewa Melayu diiktiraf',
+    dates:[
+      {y:'1946 (1 April)',e:'Malayan Union diisytiharkan'},
+      {y:'1946 (11 Mac)',e:'UMNO ditubuhkan oleh Dato\' Onn Jaafar di Johor Bahru'},
+      {y:'1948 (1 Feb)',e:'Persekutuan Tanah Melayu menggantikan Malayan Union'}
+    ],
+    figures:[
+      {n:'Dato\' Onn Jaafar',r:'Pengasas UMNO, memimpin penentangan terhadap Malayan Union'},
+      {n:'Sir Harold McMichael',r:'Wakil British yang mendapatkan tandatangan raja-raja Melayu'}
+    ],
+    quiz:[
+      {id:'qu1',q:'Apakah organisasi yang ditubuhkan untuk menentang Malayan Union?',type:'mcq',opts:['MCA','MIC','UMNO','PUTERA-AMCJA'],ans:2,expl:'UMNO ditubuhkan pada 11 Mac 1946 oleh Dato\' Onn Jaafar untuk menentang Malayan Union.'},
+      {id:'qu2',q:'Malayan Union 1946 memulihkan kuasa raja-raja Melayu.',type:'tf',ans:false,expl:'Salah. Malayan Union 1946 MENGHAPUSKAN kuasa raja-raja Melayu. Kuasa raja-raja baru dipulihkan melalui Persekutuan Tanah Melayu 1948.'}
+    ]
+  },
+  {
+    id:'independence_malaya',title:'Kemerdekaan Tanah Melayu 1957',title_en:'Independence of Malaya 1957',title_zh:'马来亚独立1957',
+    category:'Sejarah Malaysia',
+    keywords:['kemerdekaan','merdeka','1957','tunku','independence','31 ogos','31 august','perikatan','alliance','马来亚独立'],
+    short:'Tanah Melayu mencapai kemerdekaan daripada British pada 31 Ogos 1957. Tunku Abdul Rahman ialah Perdana Menteri pertama. Kemerdekaan dicapai melalui perjuangan diplomasi.',
+    short_en:'Malaya achieved independence from Britain on 31 August 1957. Tunku Abdul Rahman was the first Prime Minister, achieved through diplomacy.',
+    short_zh:'马来亚于1957年8月31日从英国获得独立。东姑阿都拉曼是第一任首相，独立通过外交谈判实现。',
+    detail:'**Proses Kemerdekaan:**\n\n1. Perikatan UMNO-MCA-MIC menunjukkan perpaduan kaum\n2. Pilihan raya 1955 — Perikatan menang 51 daripada 52 kerusi\n3. Rundingan London 1956 — British bersetuju memberikan kemerdekaan\n4. Tarikh ditetapkan: 31 Ogos 1957\n\n**Kemerdekaan 31 Ogos 1957:**\nUpacara di Stadium Merdeka, Kuala Lumpur. Tunku Abdul Rahman melaungkan \'Merdeka!\' tujuh kali.\n\n**Perbezaan Penting:**\nKemerdekaan Tanah Melayu dicapai melalui perjuangan diplomasi dan rundingan aman — BUKAN melalui revolusi bersenjata.',
+    dates:[
+      {y:'1955',e:'Pilihan raya persekutuan pertama — Perikatan menang besar'},
+      {y:'1956',e:'Rundingan London — British bersetuju memberikan kemerdekaan'},
+      {y:'1957 (31 Ogos)',e:'Kemerdekaan Tanah Melayu diisytiharkan di Stadium Merdeka'}
+    ],
+    figures:[
+      {n:'Tunku Abdul Rahman',r:'Bapa Malaysia, PM pertama Tanah Melayu'},
+      {n:'Tun Abdul Razak',r:'Bapa Pembangunan, PM kedua Malaysia'},
+      {n:'Tun Tan Cheng Lock',r:'Pengasas MCA, mewakili masyarakat Cina'},
+      {n:'Tun V.T. Sambanthan',r:'Presiden MIC, mewakili masyarakat India'}
+    ],
+    quiz:[
+      {id:'qk1',q:'Pada tarikh berapakah Tanah Melayu mencapai kemerdekaan?',type:'mcq',opts:['16 September 1963','31 Ogos 1957','1 Februari 1948','11 Mac 1946'],ans:1,expl:'Tanah Melayu mencapai kemerdekaan pada 31 Ogos 1957.'},
+      {id:'qk2',q:'Siapakah Perdana Menteri pertama Tanah Melayu?',type:'mcq',opts:['Tun Abdul Razak','Tunku Abdul Rahman','Dato\' Onn Jaafar','Tun Hussein Onn'],ans:1,expl:'Tunku Abdul Rahman Putra Al-Haj ialah PM pertama Tanah Melayu — dikenali sebagai \'Bapa Malaysia\'.'},
+      {id:'qk3',q:'Kemerdekaan Tanah Melayu dicapai melalui perjuangan bersenjata.',type:'tf',ans:false,expl:'Salah. Kemerdekaan Tanah Melayu dicapai melalui perjuangan diplomasi dan rundingan aman.'}
+    ]
+  },
+  {
+    id:'malaysia_formation',title:'Pembentukan Malaysia 1963',title_en:'Formation of Malaysia 1963',title_zh:'马来西亚的成立1963',
+    category:'Sejarah Malaysia',
+    keywords:['pembentukan malaysia','formation of malaysia','1963','singapura','16 september','malaysia day','hari malaysia','马来西亚成立'],
+    short:'Malaysia dibentuk pada 16 September 1963 melalui penggabungan Tanah Melayu, Singapura, Sabah dan Sarawak. Singapura kemudiannya berpisah pada 9 Ogos 1965.',
+    short_en:'Malaysia was formed on 16 September 1963 through the merger of Malaya, Singapore, Sabah and Sarawak. Singapore later separated on 9 August 1965.',
+    short_zh:'马来西亚于1963年9月16日通过合并成立。新加坡后来于1965年8月9日分离。',
+    detail:'**Cadangan Tunku (1961):** Tunku Abdul Rahman mencadangkan penggabungan Tanah Melayu, Singapura, Brunei, Sabah, Sarawak. Brunei menolak.\n\n**Laporan Cobbold (1962):** Menyiasat sokongan rakyat Sabah dan Sarawak — majoriti menyokong.\n\n**Perjanjian Malaysia (9 Julai 1963):** Ditandatangani di London. Malaysia diwujudkan 16 September 1963.\n\n**Konfrontasi Indonesia:** Sukarno melancarkan Konfrontasi (1963–1966) menentang pembentukan Malaysia.\n\n**Pemisahan Singapura (9 Ogos 1965):** Perselisihan antara UMNO dan PAP tentang \'Malaysian Malaysia\'.\n\n**20 Perkara Sabah & 18 Perkara Sarawak:** Syarat-syarat penyertaan termasuk autonomi bahasa, agama dan imigresen.',
+    dates:[
+      {y:'1961',e:'Tunku mencadangkan konsep Malaysia'},
+      {y:'1963 (9 Julai)',e:'Perjanjian Malaysia ditandatangani di London'},
+      {y:'1963 (16 September)',e:'Malaysia dibentuk secara rasmi'},
+      {y:'1965 (9 Ogos)',e:'Singapura berpisah daripada Malaysia'}
+    ],
+    figures:[
+      {n:'Tunku Abdul Rahman',r:'Pencetus dan pelaksana idea pembentukan Malaysia'},
+      {n:'Lee Kuan Yew',r:'PM Singapura — menyertai kemudian berpisah'},
+      {n:'Donald Stephens (Fuad Stephens)',r:'Pemimpin Sabah yang menyokong Malaysia'}
+    ],
+    quiz:[
+      {id:'qmf1',q:'Pada tarikh berapakah Malaysia dibentuk secara rasmi?',type:'mcq',opts:['31 Ogos 1957','16 September 1963','9 Ogos 1965','9 Julai 1963'],ans:1,expl:'Malaysia dibentuk pada 16 September 1963 melalui penggabungan Tanah Melayu, Singapura, Sabah dan Sarawak.'},
+      {id:'qmf2',q:'Singapura berpisah daripada Malaysia pada tahun 1965.',type:'tf',ans:true,expl:'Benar. Singapura berpisah pada 9 Ogos 1965 akibat perselisihan politik antara PAP dan UMNO.'},
+      {id:'qmf3',q:'Negara manakah yang TIDAK menyertai pembentukan Malaysia 1963?',type:'mcq',opts:['Sabah','Sarawak','Brunei','Singapura'],ans:2,expl:'Brunei menolak cadangan untuk menyertai Malaysia. Hanya Tanah Melayu, Singapura, Sabah dan Sarawak membentuk Malaysia 1963.'}
+    ]
+  },
+  {
+    id:'sabah_history',title:'Sejarah Sabah',title_en:'History of Sabah',title_zh:'沙巴历史',
+    category:'Sejarah Sabah & Sarawak',
+    keywords:['sabah','sejarah sabah','north borneo','borneo utara','sbbu','chartered company','kadazan','dusun','murut','bajau','sandakan','mat salleh','沙巴'],
+    short:'Sabah (Borneo Utara) berada di bawah pengaruh Kesultanan Brunei dan Sulu sebelum dikuasai oleh SBBU pada 1881 dan menyertai Malaysia pada 1963.',
+    short_en:'Sabah (North Borneo) was under Brunei and Sulu Sultanates before the British North Borneo Chartered Company took control in 1881 and it joined Malaysia in 1963.',
+    short_zh:'沙巴（北婆罗洲）在英国北婆罗洲特许公司于1881年接管之前，一直处于文莱和苏禄苏丹国的影响之下，1963年加入马来西亚。',
+    detail:'**Zaman Pra-Kolonial:**\nDidiami suku Kadazan-Dusun, Bajau, Murut, Suluk. Di bawah pengaruh Kesultanan Brunei dan Sulu.\n\n**SBBU (1881):** Syarikat Berpiagam Borneo Utara British mendapat piagam diraja, menguasai Borneo Utara.\n\n**Mat Salleh:** Pahlawan Sabah yang menentang penjajahan SBBU pada akhir abad ke-19.\n\n**Pendudukan Jepun (1942–1945):**\nSandakan Death March — lebih 2,400 tahanan perang dipaksa berjalan kaki dalam keadaan menyeksakan.\n\n**1946:** Borneo Utara menjadi Tanah Jajahan Mahkota British.\n\n**Penyertaan Malaysia (1963):** Melalui 20 Perkara Sabah — melindungi autonomi agama, bahasa dan imigresen.',
+    dates:[
+      {y:'1881',e:'SBBU menguasai Borneo Utara'},
+      {y:'1942',e:'Jepun menduduki Borneo Utara'},
+      {y:'1943–1945',e:'Sandakan Death March'},
+      {y:'1946',e:'Borneo Utara menjadi Tanah Jajahan Mahkota British'},
+      {y:'1963 (16 September)',e:'Sabah menyertai Malaysia'}
+    ],
+    figures:[
+      {n:'Mat Salleh',r:'Pahlawan Sabah yang menentang penjajahan SBBU'},
+      {n:'Donald Stephens (Fuad Stephens)',r:'Pemimpin Sabah yang menyokong penyertaan dalam Malaysia'}
+    ],
+    quiz:[
+      {id:'qs1',q:'Apakah nama syarikat yang menguasai Borneo Utara pada tahun 1881?',type:'mcq',opts:['East India Company','Syarikat Berpiagam Borneo Utara British','Syarikat Hindia Timur Belanda','British Malaya Company'],ans:1,expl:'SBBU (Syarikat Berpiagam Borneo Utara British) menguasai Borneo Utara bermula 1881.'},
+      {id:'qs2',q:'Sandakan Death March melibatkan tahanan perang semasa Perang Dunia Kedua.',type:'tf',ans:true,expl:'Benar. Lebih 2,400 tahanan perang dipaksa berjalan kaki dalam keadaan sangat menyeksakan semasa pendudukan Jepun.'}
+    ]
+  },
+  {
+    id:'sarawak_history',title:'Sejarah Sarawak',title_en:'History of Sarawak',title_zh:'砂拉越历史',
+    category:'Sejarah Sabah & Sarawak',
+    keywords:['sarawak','brooke','rajah putih','white rajah','james brooke','iban','dayak','kuching','砂拉越'],
+    short:'Sarawak diperintah oleh dinasti Brooke (Rajah Putih) dari 1841 hingga 1946 sebelum menjadi tanah jajahan British dan menyertai Malaysia pada 1963.',
+    short_en:'Sarawak was ruled by the Brooke dynasty (White Rajahs) from 1841 to 1946 before becoming a British Crown Colony and joining Malaysia in 1963.',
+    short_zh:'砂拉越由布鲁克王朝（白人拉惹）统治，从1841年到1946年，最终于1963年加入马来西亚。',
+    detail:'**Kesultanan Brunei:** Sarawak asalnya di bawah Brunei. Didiami Iban, Bidayuh, Melanau, Penan, Kenyah, Kayan.\n\n**Dinasti Brooke — Rajah Putih:**\n• 1841: James Brooke — Rajah pertama (menerima Sarawak dari Sultan Brunei)\n• 1868–1917: Charles Brooke — mengembangkan wilayah\n• 1917–1946: Charles Vyner Brooke — Rajah terakhir\n\n**Pendudukan Jepun (1941–1945):** Kuching menjadi pusat pentadbiran Jepun.\n\n**Penyerahan kepada British (1946):** Vyner Brooke menyerahkan Sarawak kepada British Crown. Ada penentangan — Gabenor Duncan Stewart dibunuh.\n\n**Penyertaan Malaysia (1963):** Melalui 18 Perkara Sarawak.',
+    dates:[
+      {y:'1841',e:'James Brooke menjadi Rajah Sarawak pertama'},
+      {y:'1941',e:'Jepun menduduki Sarawak'},
+      {y:'1946',e:'Sarawak diserahkan kepada British Crown'},
+      {y:'1963 (16 September)',e:'Sarawak menyertai Malaysia'}
+    ],
+    figures:[
+      {n:'James Brooke',r:'Rajah Putih pertama Sarawak (1841–1868)'},
+      {n:'Charles Brooke',r:'Rajah Putih kedua (1868–1917)'},
+      {n:'Charles Vyner Brooke',r:'Rajah Putih terakhir (1917–1946)'}
+    ],
+    quiz:[
+      {id:'qsr1',q:'Siapakah yang dikenali sebagai "Rajah Putih" pertama Sarawak?',type:'mcq',opts:['Charles Brooke','Charles Vyner Brooke','James Brooke','Francis Light'],ans:2,expl:'James Brooke menjadi Rajah Sarawak pertama pada 1841.'},
+      {id:'qsr2',q:'Sarawak terus di bawah keluarga Brooke sehingga tahun 1946.',type:'tf',ans:true,expl:'Benar. Dinasti Brooke memerintah Sarawak dari 1841 hingga 1946.'}
+    ]
+  },
+  {
+    id:'world_war_2',title:'Perang Dunia Kedua (1939–1945)',title_en:'World War II (1939–1945)',title_zh:'第二次世界大战',
+    category:'Sejarah Dunia',
+    keywords:['perang dunia kedua','world war 2','ww2','wwii','perang dunia 2','nazi','hitler','jepun','japan','sekutu','allies','第二次世界大战'],
+    short:'Perang Dunia Kedua (1939–1945) adalah konflik ketenteraan global terbesar dalam sejarah, melibatkan kuasa Paksi (Jerman, Itali, Jepun) menentang Kuasa Berikat.',
+    short_en:'World War II (1939–1945) was the largest global military conflict in history, involving the Axis powers against the Allied powers.',
+    short_zh:'第二次世界大战（1939-1945年）是人类历史上最大的全球军事冲突。',
+    detail:'**Sebab-Sebab Perang:**\n• Kebangkitan Nazi di Jerman — Hitler menjadi Fuhrer\n• Dasar expansionist Jerman, Itali, Jepun\n• Kegagalan dasar appeasement\n• Pencerobohan Jerman ke atas Poland (1 September 1939)\n\n**Peristiwa Utama:**\n• 1940: Kejatuhan Perancis, Operasi Dunkirk\n• 1941: Jerman serang Soviet Union; Jepun serang Pearl Harbor\n• 1942: Kejatuhan Singapura kepada Jepun (15 Feb)\n• 1944: D-Day — pencerobohan Normandy\n• 1945: Bom atom Hiroshima & Nagasaki → Jepun menyerah\n\n**Kesan:**\n• ~70-85 juta kematian; Holocaust — 6 juta Yahudi\n• Penubuhan PBB 1945; Bermula Perang Dingin\n• Gelombang kemerdekaan di Asia dan Afrika',
+    dates:[
+      {y:'1939 (1 Sep)',e:'Jerman serang Poland — Perang Dunia Kedua bermula'},
+      {y:'1941 (7 Dis)',e:'Jepun serang Pearl Harbor — Amerika memasuki perang'},
+      {y:'1942 (15 Feb)',e:'Kejatuhan Singapura kepada Jepun'},
+      {y:'1944 (6 Jun)',e:'D-Day — pencerobohan Normandy'},
+      {y:'1945 (6 & 9 Ogos)',e:'Bom atom di Hiroshima dan Nagasaki'},
+      {y:'1945 (2 Sep)',e:'Jepun menyerah — Perang Dunia Kedua berakhir'}
+    ],
+    figures:[
+      {n:'Adolf Hitler',r:'Pemimpin Nazi Jerman'},
+      {n:'Winston Churchill',r:'PM Britain semasa perang'},
+      {n:'Franklin D. Roosevelt',r:'Presiden Amerika Syarikat'},
+      {n:'Hirohito',r:'Maharaja Jepun semasa perang'}
+    ],
+    quiz:[
+      {id:'qw1',q:'Apakah peristiwa yang mencetuskan Perang Dunia Kedua?',type:'mcq',opts:['Jepun serang Pearl Harbor','Jerman serang Poland','Pembunuhan Archduke Franz Ferdinand','Kejatuhan Perancis'],ans:1,expl:'Perang Dunia Kedua dicetuskan oleh pencerobohan Jerman ke atas Poland pada 1 September 1939.'},
+      {id:'qw2',q:'Bom atom dijatuhkan ke atas bandar mana di Jepun?',type:'mcq',opts:['Tokyo dan Osaka','Hiroshima dan Nagasaki','Kyoto dan Hiroshima','Nagasaki dan Tokyo'],ans:1,expl:'Bom atom dijatuhkan di Hiroshima (6 Ogos) dan Nagasaki (9 Ogos 1945).'},
+      {id:'qw3',q:'Perang Dunia Kedua berakhir pada tahun 1945.',type:'tf',ans:true,expl:'Benar. Jerman menyerah Mei 1945; Jepun menyerah 2 September 1945.'}
+    ]
+  },
+  {
+    id:'ancient_egypt',title:'Tamadun Mesir Purba',title_en:'Ancient Egyptian Civilization',title_zh:'古埃及文明',
+    category:'Sejarah Dunia',
+    keywords:['mesir','egypt','tamadun mesir','firaun','pharaoh','piramid','pyramid','nil','nile','hieroglif','hieroglyphics','古埃及'],
+    short:'Tamadun Mesir Purba berkembang di Sungai Nil sejak ~3100 SM. Terkenal dengan Firaun, Piramid, hieroglif dan pencapaian saintifik.',
+    short_en:'Ancient Egypt flourished along the Nile since ~3100 BCE, famous for Pharaohs, Pyramids, hieroglyphics and scientific achievements.',
+    short_zh:'古埃及文明自公元前3100年起在尼罗河沿岸繁荣，以法老、金字塔和象形文字闻名。',
+    detail:'**Latar Belakang:**\n• Berkembang di Lembah Sungai Nil, Afrika Utara\n• Bermula ~3100 SM dengan penyatuan Mesir Atas & Bawah\n• Berlangsung lebih 3,000 tahun\n\n**Ciri-ciri Tamadun:**\n• Sistem Pemerintahan: Firaun memerintah sebagai raja-tuhan\n• Agama: Politeistik — Ra, Osiris, Isis, Horus\n• Tulisan: Hieroglif — sistem simbol gambar\n• Pembinaan: Piramid, Sphinx, kuil-kuil besar\n\n**Pencapaian Utama:**\n• Piramid Agung Giza — keajaiban dunia purba\n• Matematik dan geometri untuk pembinaan\n• Perubatan — mumifikasi dan pembedahan\n• Kalendar 365 hari\n\n**Kejatuhan:** Ditakluki oleh Assyria, Parsi, Alexander Agung (332 SM), dan akhirnya Rom (30 SM).',
+    dates:[
+      {y:'~3100 SM',e:'Penyatuan Mesir Atas dan Bawah'},
+      {y:'~2560 SM',e:'Pembinaan Piramid Agung Giza'},
+      {y:'332 SM',e:'Alexander Agung menakluki Mesir'},
+      {y:'30 SM',e:'Mesir menjadi sebahagian Empayar Rom'}
+    ],
+    figures:[
+      {n:'Firaun Khufu',r:'Membina Piramid Agung Giza (~2560 SM)'},
+      {n:'Ramesses II',r:'Salah satu Firaun terkuat (~1279–1213 SM)'},
+      {n:'Cleopatra VII',r:'Firaun terakhir Mesir'},
+      {n:'Tutankhamun',r:'Firaun muda — makamnya ditemui hampir utuh (1922)'}
+    ],
+    quiz:[
+      {id:'qe1',q:'Di sepanjang sungai apakah Tamadun Mesir Purba berkembang?',type:'mcq',opts:['Sungai Tigris','Sungai Indus','Sungai Nil','Sungai Huang He'],ans:2,expl:'Tamadun Mesir Purba berkembang di Sungai Nil. Banjiran tahunannya membekalkan tanah yang subur.'},
+      {id:'qe2',q:'Hieroglif ialah sistem tulisan Mesir Purba menggunakan simbol-simbol.',type:'tf',ans:true,expl:'Benar. Hieroglif menggunakan simbol-simbol gambar untuk mewakili bunyi dan makna.'}
+    ]
+  },
+  {
+    id:'nationalism_concept',title:'Nasionalisme',title_en:'Nationalism',title_zh:'民族主义',
+    category:'Konsep Sejarah',
+    keywords:['nasionalisme','nationalism','semangat kebangsaan','patriotisme','national identity','民族主义'],
+    short:'Nasionalisme ialah fahaman yang mengutamakan kepentingan, identiti dan kedaulatan sesebuah bangsa. Ia memainkan peranan penting dalam gerakan kemerdekaan di seluruh dunia.',
+    short_en:'Nationalism is an ideology that prioritizes the interests, identity and sovereignty of a nation. It was crucial in independence movements worldwide.',
+    short_zh:'民族主义是优先考虑国家利益、身份认同和主权的意识形态，在全球独立运动中发挥重要作用。',
+    detail:'**Definisi:** Nasionalisme menekankan kepentingan, budaya, bahasa dan sejarah sesebuah bangsa — mendorong semangat perpaduan.\n\n**Jenis-Jenis Nasionalisme:**\n• Liberal — hak individu dalam konteks kebangsaan\n• Konservatif — tradisi dan budaya warisan\n• Etnik — berdasarkan perkongsian etnik\n• Agama — menggabungkan identiti agama dengan kebangsaan\n\n**Nasionalisme di Tanah Melayu:**\n• Bermula 1920-an melalui persuratkhabaran Melayu\n• Majalah Al-Imam (1906–1908) menyebarkan pembaharuan\n• Kesatuan Melayu Singapura (1926) — organisasi moden pertama\n• Semakin kuat selepas Perang Dunia Kedua\n• UMNO (1946) menjadi teras gerakan nasionalisme',
+    dates:[
+      {y:'1906',e:'Majalah Al-Imam diterbitkan — idea pembaharuan Islam'},
+      {y:'1926',e:'Kesatuan Melayu Singapura ditubuhkan'},
+      {y:'1946',e:'UMNO ditubuhkan — teras nasionalisme Melayu'}
+    ],
+    figures:[
+      {n:'Dato\' Onn Jaafar',r:'Nasionalis Melayu, pengasas UMNO'},
+      {n:'Tunku Abdul Rahman',r:'Pemimpin nasionalisme Melayu'},
+      {n:'Mohandas Gandhi',r:'Pemimpin gerakan kemerdekaan India'}
+    ],
+    quiz:[
+      {id:'qn1',q:'Apakah maksud nasionalisme?',type:'mcq',opts:['Fahaman mengutamakan kepentingan peribadi','Fahaman mengutamakan kepentingan, identiti dan kedaulatan sesebuah bangsa','Fahaman menentang semua kerajaan','Fahaman menekankan perdagangan antarabangsa'],ans:1,expl:'Nasionalisme mengutamakan kepentingan, identiti dan kedaulatan sesebuah bangsa.'}
+    ]
+  },
+  {
+    id:'colonialism_concept',title:'Kolonialisme (Penjajahan)',title_en:'Colonialism',title_zh:'殖民主义',
+    category:'Konsep Sejarah',
+    keywords:['penjajahan','kolonialisme','colonialism','imperialism','imperialisme','colony','殖民主义'],
+    short:'Kolonialisme ialah sistem di mana negara-negara kuasa besar menguasai, mengeksploitasi dan mentadbir negara lain untuk keuntungan ekonomi dan kuasa politik.',
+    short_en:'Colonialism is a system where powerful nations control, exploit and administer other countries for economic gain and political power.',
+    short_zh:'殖民主义是强大国家为了经济利益和政治权力而控制、剥削其他国家的制度。',
+    detail:'**Definisi:** Kolonialisme berlaku apabila negara lebih kuat menguasai negara lain, mengeksploitasi sumbernya, dan mentadbir penduduknya.\n\n**Sebab Penjajahan:**\n• Ekonomi — sumber mentah dan pasaran baru\n• Politik — memperluas kuasa dan pengaruh\n• Agama — misi Kristianisasi (Eropah)\n• Teknologi — kelebihan ketenteraan\n\n**Kesan Penjajahan:**\nNegatif: Eksploitasi sumber, dasar pecah dan perintah, penindasan budaya, ketidakseimbangan ekonomi.\n\n**Contoh di Asia Tenggara:**\n• British di Tanah Melayu, Burma, India\n• Belanda di Indonesia\n• Perancis di Indo-China\n• Sepanyol/Amerika di Filipina',
+    dates:[
+      {y:'1511',e:'Portugis menakluki Melaka — penjajahan di Asia Tenggara'},
+      {y:'1786',e:'British mula menguasai Tanah Melayu (Pulau Pinang)'},
+      {y:'1957–1960s',e:'Gelombang kemerdekaan — berakhirnya era penjajahan'}
+    ],
+    figures:[
+      {n:'Vasco da Gama',r:'Membuka laluan ke India (1498)'},
+      {n:'Alfonso de Albuquerque',r:'Menakluki Melaka (1511)'}
+    ],
+    quiz:[
+      {id:'qc1',q:'Apakah yang dimaksudkan dengan kolonialisme?',type:'mcq',opts:['Sistem perdagangan bebas','Sistem di mana negara kuat menguasai dan mengeksploitasi negara lain','Sistem pemerintahan demokrasi','Sistem pembahagian tanah'],ans:1,expl:'Kolonialisme ialah sistem di mana negara kuasa besar menguasai, mengeksploitasi dan mentadbir negara lain.'}
+    ]
+  },
+  {
+    id:'historical_thinking',title:'Kemahiran Pemikiran Sejarah (KPS)',title_en:'Historical Thinking Skills (HTS)',title_zh:'历史思维技能',
+    category:'Kemahiran Sejarah',
+    keywords:['kemahiran pemikiran sejarah','kemahiran sejarah','kps','historical thinking','historical thinking skills','hts','kronologi','chronology','empati sejarah','historical empathy','rasionaliti','imaginasi sejarah','历史思维'],
+    short:'Kemahiran Pemikiran Sejarah (KPS) adalah 6 kaedah berfikir kritis yang digunakan untuk memahami dan menganalisis peristiwa sejarah.',
+    short_en:'Historical Thinking Skills (HTS) are 6 critical thinking methods used to understand and analyse historical events.',
+    short_zh:'历史思维技能是用来批判性地理解和分析历史事件的6种思维方法。',
+    detail:'**6 Kemahiran Pemikiran Sejarah dalam kurikulum Malaysia:**\n\n**1. KRONOLOGI**\nMenyusun peristiwa mengikut urutan masa.\nContoh: Menyusun peristiwa kemerdekaan 1946–1963.\n\n**2. MENEROKA BUKTI**\nMenilai sumber sejarah (gambar, dokumen, artifak).\nJenis: Sumber primer (sezaman) dan sumber sekunder.\n\n**3. MEMBUAT INTERPRETASI**\nMembuat tafsiran berdasarkan bukti.\nContoh: Mentafsirkan sebab kejatuhan Melaka 1511.\n\n**4. IMAGINASI SEJARAH**\nMembayangkan situasi pada zaman lampau.\nContoh: Kehidupan harian rakyat Melaka abad ke-15.\n\n**5. EMPATI SEJARAH**\nMemahami perasaan dan tindakan orang zaman lampau.\nContoh: Mengapa orang Melayu menentang Malayan Union?\n\n**6. RASIONALITI**\nBerfikir secara logik dan kritis tentang peristiwa sejarah.',
+    dates:[],
+    figures:[],
+    quiz:[
+      {id:'qkps1',q:'Kemahiran menyusun peristiwa mengikut urutan masa dipanggil...',type:'mcq',opts:['Empati Sejarah','Kronologi','Rasionaliti','Imaginasi Sejarah'],ans:1,expl:'Kronologi ialah kemahiran menyusun peristiwa sejarah mengikut urutan masa yang betul.'},
+      {id:'qkps2',q:'Empati Sejarah bermaksud memahami perasaan orang pada zaman lampau dalam konteks mereka.',type:'tf',ans:true,expl:'Benar. Empati Sejarah ialah kemahiran memahami perasaan, fikiran dan tindakan orang pada zaman lampau.'},
+      {id:'qkps3',q:'Berapa banyak Kemahiran Pemikiran Sejarah dalam kurikulum Malaysia?',type:'mcq',opts:['4','5','6','7'],ans:2,expl:'Terdapat 6 KPS: Kronologi, Meneroka Bukti, Membuat Interpretasi, Imaginasi Sejarah, Empati Sejarah, dan Rasionaliti.'}
+    ]
+  }
+];
+
+const INTENTS = [
+  {id:'greeting',patterns:['salam sejahtera','selamat pagi','selamat petang','selamat malam','assalamualaikum','hello','helo','你好','您好'],key:'greeting'},
+  {id:'hi_standalone',patterns:['hi'],key:'greeting',exact:true},
+  {id:'help',patterns:['bantuan','cara guna','how to use','instructions','帮助','怎么用'],key:'help'},
+  {id:'topic_list',patterns:['senarai topik','list topic','apa topik','topik apa','pilih topik','all topics','show topics','主题列表'],key:'topic_list'},
+  {id:'timeline',patterns:['garis masa','timeline','chronology','kronologi'],key:'timeline_prompt'},
+  {id:'lang_switch',patterns:['tukar bahasa','change language','pilih bahasa','select language','语言选择'],key:'language_prompt'},
+  {id:'teacher',patterns:['hubungi guru','contact teacher','cikgu','whatsapp guru','teacher help','老师'],key:'teacher_escalation'},
+  {id:'thanks',patterns:['terima kasih','thank you','thanks','tq','syukran','谢谢','多谢'],key:'thanks'},
+  {id:'bye',patterns:['selamat tinggal','bye','goodbye','sampai jumpa','再见','拜拜'],key:'farewell'},
+  {id:'what_history',patterns:['apa itu sejarah','what is history','definisi sejarah','maksud sejarah','什么是历史'],key:'what_is_history'},
+  {id:'topik',patterns:['topik'],key:'topic_list',exact:true}
+];
+
+const STATIC = {
+  greeting:`Salam sejahtera! 👋 Saya **SejarahMate AI**, pembantu pembelajaran Sejarah anda!\n\nSaya boleh membantu anda:\n📖 Mempelajari topik Sejarah\n🎯 Kuiz interaktif\n📅 Garis masa sejarah\n🌐 BM · English · 中文\n\nApakah yang ingin anda pelajari hari ini?`,
+  greeting_en:`Greetings! 👋 I am **SejarahMate AI**, your History learning assistant!\n\nI can help you:\n📖 Learn History topics\n🎯 Interactive quizzes\n📅 Historical timelines\n🌐 BM · English · 中文\n\nWhat would you like to learn today?`,
+  greeting_zh:`你好！👋 我是 **SejarahMate AI**，您的历史学习助手！\n\n我可以帮助您：\n📖 学习历史主题\n🎯 互动测验\n📅 历史时间线\n\n您今天想学什么？`,
+  help:`🆘 **Cara Menggunakan SejarahMate AI:**\n\n1. **Tanya soalan** — Taip soalan Sejarah anda\n2. **Pilih topik** — Klik butang topik di sebelah kiri\n3. **Ambil kuiz** — Taip 'kuiz' atau klik butang Kuiz\n4. **Lihat garis masa** — Taip 'garis masa [topik]'\n5. **Tukar bahasa** — Klik pilihan bahasa di atas\n\n💡 **Tips:** Cuba kata kunci seperti 'Melaka', 'Merdeka', 'WW2' atau 'nasionalisme'`,
+  topic_list:`📚 **Topik-Topik Sejarah yang Tersedia:**\n\n🇲🇾 **Sejarah Malaysia**\n• Kesultanan Melayu Melaka\n• Penjajahan British\n• Malayan Union 1946\n• Kemerdekaan 1957\n• Pembentukan Malaysia 1963\n\n🏔️ **Sabah & Sarawak**\n• Sejarah Sabah\n• Sejarah Sarawak\n\n🌏 **Sejarah Dunia**\n• Perang Dunia Kedua\n• Tamadun Mesir Purba\n\n💡 **Konsep**\n• Nasionalisme\n• Kolonialisme\n\n🧠 **Kemahiran Sejarah**\n• Kemahiran Pemikiran Sejarah (KPS)\n\nTaip nama topik untuk mula!`,
+  timeline_prompt:`📅 **Garis Masa Sejarah**\n\nTopik garis masa yang tersedia:\n• Garis masa Melaka\n• Garis masa Kemerdekaan Malaysia\n• Garis masa Malaysia 1963\n• Garis masa Perang Dunia Kedua\n\nTaip nama topik untuk melihat garis masanya!`,
+  language_prompt:`🌐 **Pilihan Bahasa / Language Selection / 语言选择**\n\n1. 🇲🇾 Bahasa Melayu — taip 'melayu'\n2. 🇬🇧 English — taip 'english'\n3. 🇨🇳 中文 — taip 'mandarin'\n\nOr click the language buttons above.`,
+  teacher_escalation:`👨‍🏫 **Hubungi Guru Sejarah**\n\nAda soalan yang memerlukan bantuan guru?\n\n📱 **WhatsApp Guru:**\n[Klik untuk WhatsApp](https://wa.me/601110790301)\nNombor: +601110790301\n\nSaya boleh membantu anda dengan:\n✅ Penerangan topik Sejarah\n✅ Latihan soalan dan kuiz\n✅ Garis masa sejarah\n\nApakah topik yang memerlukan penerangan?`,
+  thanks:`Sama-sama! 😊 Selamat belajar Sejarah! Jika ada soalan lain, saya sentiasa sedia membantu. 📚`,
+  farewell:`Selamat tinggal! 👋 Semoga berjaya dalam pelajaran Sejarah anda! Jumpa lagi di SejarahMate AI! 🇲🇾`,
+  what_is_history:`📖 **Apakah Sejarah?**\n\nSejarah ialah bidang ilmu yang mengkaji dan merakam peristiwa-peristiwa masa lampau manusia secara sistematik berdasarkan bukti-bukti yang ada.\n\n**Mengapa Sejarah penting?**\n1. Memahami asal-usul bangsa dan negara\n2. Belajar daripada kesilapan masa lalu\n3. Membentuk identiti kebangsaan\n4. Memahami sebab-akibat peristiwa semasa\n5. Melatih kemahiran berfikir kritis`,
+  fallback:`Maaf, saya belum dapat memahami soalan anda dengan tepat. 😅\n\nCuba gunakan kata kunci Sejarah seperti:\n• Nama topik (contoh: 'Melaka', 'Merdeka', 'WW2')\n• Jenis aktiviti ('kuiz', 'garis masa', 'topik')\n• Konsep ('nasionalisme', 'kolonialisme')\n\nAtau pilih salah satu topik di bawah:`,
+  fallback_2:`Saya masih tidak dapat memahami soalan anda. 😔\n\nMungkin anda boleh:\n1. Cuba semak ejaan kata kunci\n2. Gunakan bahasa yang lebih mudah\n3. Pilih topik daripada senarai\n4. Hubungi guru Sejarah untuk bantuan lanjut`,
+  academic_dishonesty:`Saya faham anda memerlukan bantuan! 😊\n\nNamun, saya tidak dapat menyiapkan tugasan atau peperiksaan bagi pihak anda.\n\nSaya boleh membantu anda dengan:\n✅ Menerangkan konsep dan topik\n✅ Memberikan contoh dan panduan\n✅ Latihan soalan untuk persediaan\n\nApakah topik yang ingin anda fahami?`
+};
+
+const WHATSAPP_NUMBER = '601110790301';
+
+// ─── ENGINE ───────────────────────────────────────────────────────────────────
+function norm(s){ return s.toLowerCase().replace(/[?？。！!.,;:'"()（）]/g,' ').replace(/\s+/g,' ').trim(); }
+
+function scoreKw(text, kws){
+  let sc=0;
+  for(const kw of kws){ if(text.includes(norm(kw))) sc+=kw.split(' ').length; }
+  return sc;
+}
+
+function matchIntent(text){
+  const t=norm(text);
+  // guardrail
+  if(/buat (tugasan|kerja|esei|assignment)|siapkan (tugasan|jawapan)|jawabkan (soalan|peperiksaan)/.test(t))
+    return {type:'guardrail',key:'academic_dishonesty'};
+
+  for(const intent of INTENTS){
+    for(const p of intent.patterns){
+      const np=norm(p);
+      let matched;
+      if(intent.exact || np.length<=3)
+        matched=new RegExp('(?<![a-z0-9])'+np.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?![a-z0-9])').test(t);
+      else
+        matched=t.includes(np);
+      if(matched) return {type:'intent',key:intent.key};
+    }
+  }
+
+  let best=null,bestSc=0;
+  for(const topic of KB_TOPICS){
+    const sc=scoreKw(t,topic.keywords);
+    if(sc>bestSc){bestSc=sc;best=topic;}
+  }
+  if(best&&bestSc>=1) return {type:'topic',topic:best};
+  return {type:'fallback'};
+}
+
+// ─── SESSION ──────────────────────────────────────────────────────────────────
+const SESSION = {
+  lang:'bm', fallbackCount:0, lastTopic:null,
+  quizMode:false, quizQs:[], quizIdx:0, quizScore:0
+};
+
+// ─── PROCESS MESSAGE ─────────────────────────────────────────────────────────
+function processMessage(message){
+  const t=norm(message);
+  const lang=SESSION.lang;
+
+  if(SESSION.quizMode) return handleQuizChat(message);
+
+  // Language switch
+  const wc=t.split(/\s+/).filter(Boolean).length;
+  if(wc<=4){
+    if(/^(english|inggeris)$/.test(t)||t==='en'||t==='2'){
+      SESSION.lang='en';
+      return {text:STATIC.greeting_en,sugg:['Topics','Quiz','Timeline','Help']};
+    }
+    if(/^(melayu|bahasa melayu|bahasa malaysia|bm|malay)$/.test(t)||t==='1'){
+      SESSION.lang='bm';
+      return {text:STATIC.greeting,sugg:['Topik','Kuiz','Garis Masa','Bantuan']};
+    }
+    if(/^(mandarin|chinese|cina|中文|华语)$/.test(t)||t==='zh'||t==='3'){
+      SESSION.lang='zh';
+      return {text:STATIC.greeting_zh,sugg:['主题','测验','时间线','帮助']};
+    }
+  }
+
+  // "more" on last topic
+  if(SESSION.lastTopic&&/\b(lebih lanjut|more|detail|terperinci|explain more|hurai)\b/.test(t)){
+    const tp=SESSION.lastTopic;
+    const txt=buildDetailResponse(tp,lang);
+    SESSION.fallbackCount=0;
+    return {text:txt,sugg:defSugg(lang)};
+  }
+
+  // Timeline
+  if(/garis masa|timeline|chronology|kronologi/.test(t)){
+    let best=null,sc=0;
+    for(const tp of KB_TOPICS){const s=scoreKw(t,tp.keywords);if(s>sc){sc=s;best=tp;}}
+    if(best&&sc>=1){
+      SESSION.fallbackCount=0;
+      return {text:buildTimeline(best,lang),sugg:defSugg(lang)};
+    }
+    return {text:STATIC.timeline_prompt,sugg:topicSugg()};
+  }
+
+  // Quiz trigger
+  if(/\b(kuiz|quiz|cuba soalan|start quiz|begin quiz|mula kuiz|soalan kuiz|quiz sejarah)\b/.test(t)){
+    return startQuizSession();
+  }
+
+  // Topic-specific quiz
+  if(/\b(soalan|soal)\b/.test(t)||/\bpractice question\b/.test(t)){
+    let best=null,sc=0;
+    for(const tp of KB_TOPICS){const s=scoreKw(t,tp.keywords);if(s>sc){sc=s;best=tp;}}
+    if(best&&sc>=1) return startQuizSession(best.id);
+    return startQuizSession();
+  }
+
+  const match=matchIntent(message);
+
+  if(match.type==='guardrail'){
+    SESSION.fallbackCount=0;
+    return {text:STATIC[match.key],sugg:defSugg(lang)};
+  }
+  if(match.type==='intent'){
+    SESSION.fallbackCount=0;
+    const txt=match.key==='greeting'?getLangGreeting(lang):STATIC[match.key]||STATIC.fallback;
+    const sugg=match.key==='teacher_escalation'?['Topik','Kuiz','Bantuan']:
+                match.key==='topic_list'?topicSugg():defSugg(lang);
+    return {text:txt,sugg};
+  }
+  if(match.type==='topic'){
+    SESSION.lastTopic=match.topic;
+    SESSION.fallbackCount=0;
+    return {text:buildShortResponse(match.topic,lang),sugg:['Lebih Lanjut','Kuiz Topik Ini','Garis Masa','Topik Lain']};
+  }
+
+  SESSION.fallbackCount++;
+  if(SESSION.fallbackCount>=2){
+    return {text:STATIC.fallback_2,sugg:['Bantuan','Topik','Kuiz','Hubungi Guru']};
+  }
+  return {text:STATIC.fallback,sugg:topicSugg()};
+}
+
+function getLangGreeting(lang){
+  if(lang==='en') return STATIC.greeting_en;
+  if(lang==='zh') return STATIC.greeting_zh;
+  return STATIC.greeting;
+}
+
+function getLang(tp,lang){
+  return {
+    title: lang==='en'?tp.title_en:lang==='zh'?tp.title_zh:tp.title,
+    short: lang==='en'?tp.short_en:lang==='zh'?tp.short_zh:tp.short
+  };
+}
+
+function buildShortResponse(tp,lang){
+  const {title,short}=getLang(tp,lang);
+  return `📖 **${title}**\n\n${short}\n\n_Taip "lebih lanjut" atau klik **Lebih Lanjut** untuk penerangan terperinci._`;
+}
+
+function buildDetailResponse(tp,lang){
+  const {title}=getLang(tp,lang);
+  let txt=`📖 **${title}**\n\n${tp.detail}`;
+  if(tp.figures&&tp.figures.length){
+    txt+='\n\n👤 **Tokoh Penting:**\n'+tp.figures.map(f=>`• **${f.n}** — ${f.r}`).join('\n');
+  }
+  return txt;
+}
+
+function buildTimeline(tp,lang){
+  if(!tp.dates||!tp.dates.length) return `_Tiada garis masa khusus untuk topik ini._`;
+  const {title}=getLang(tp,lang);
+  const lines=tp.dates.map(d=>`**${d.y}** — ${d.e}`).join('\n');
+  return `📅 **Garis Masa: ${title}**\n\n${lines}`;
+}
+
+function defSugg(lang){
+  if(lang==='en') return ['Topics','Quiz','Timeline','Help'];
+  if(lang==='zh') return ['主题','测验','时间线','帮助'];
+  return ['Topik','Kuiz','Garis Masa','Bantuan'];
+}
+function topicSugg(){ return ['Melaka','Kemerdekaan','Malaysia 1963','WW2','Sabah']; }
+
+// ─── QUIZ ENGINE ──────────────────────────────────────────────────────────────
+const QUIZ_POOL = KB_TOPICS.flatMap(t=>(t.quiz||[]).map(q=>({...q,topic:t.title})));
+
+function startQuizSession(topicId){
+  let pool=topicId?QUIZ_POOL.filter(q=>q.id.startsWith('q'+topicId[0])):QUIZ_POOL;
+  if(pool.length<3) pool=QUIZ_POOL;
+  const shuffled=[...pool].sort(()=>Math.random()-.5).slice(0,5);
+  SESSION.quizQs=shuffled;
+  SESSION.quizIdx=0;
+  SESSION.quizScore=0;
+  SESSION.quizMode=true;
+  openQuizModal();
+  return {text:`🎯 **Kuiz Sejarah Bermula!** Sedia untuk ${shuffled.length} soalan!\n\nJawab dalam kotak sembang atau gunakan butang-butang di bawah.`,sugg:[]};
+}
+
+function handleQuizChat(msg){
+  // This path is for inline chat quiz answers (modal handles its own flow)
+  return {text:'_Sila jawab kuiz dalam tetingkap kuiz yang telah dibuka._',sugg:[]};
+}
+
+// ─── QUIZ MODAL ───────────────────────────────────────────────────────────────
+function openQuizModal(){
+  document.getElementById('quiz-modal').classList.remove('hidden');
+  renderQuizQ();
+}
+function closeQuizModal(){
+  document.getElementById('quiz-modal').classList.add('hidden');
+  SESSION.quizMode=false;
+  SESSION.quizQs=[];
+}
+
+function renderQuizQ(){
+  const {quizQs,quizIdx}=SESSION;
+  if(quizIdx>=quizQs.length){renderQuizResult();return;}
+  const q=quizQs[quizIdx];
+  const num=quizIdx+1,tot=quizQs.length;
+  const pct=Math.round((quizIdx/tot)*100);
+
+  let optsHtml='';
+  if(q.type==='mcq'){
+    optsHtml='<div class="qopts">'+q.opts.map((o,i)=>
+      `<button class="qopt" data-idx="${i}"><span style="font-weight:700;color:var(--teal);margin-right:.4rem">${String.fromCharCode(65+i)})</span>${esc(o)}</button>`
+    ).join('')+'</div>';
+  } else {
+    optsHtml=`<div class="qtf"><button class="qtfb" data-val="true">✅ Benar / True</button><button class="qtfb" data-val="false">❌ Salah / False</button></div>`;
+  }
+
+  document.getElementById('quiz-body').innerHTML=`
+    <div class="qprog">Soalan ${num} daripada ${tot}</div>
+    <div class="qpbar"><div class="qpfill" style="width:${pct}%"></div></div>
+    <div class="qtag">📚 ${esc(q.topic)}</div>
+    <div class="qtext">${esc(q.q)}</div>
+    ${optsHtml}
+    <div class="qexpl hidden" id="qexpl"></div>
+    <div class="qnav"><button class="btn-p hidden" id="qnext">Seterusnya →</button></div>`;
+
+  SESSION._quizAnswered=false;
+
+  if(q.type==='mcq'){
+    document.querySelectorAll('.qopt').forEach(btn=>{
+      btn.addEventListener('click',()=>handleMCQ(btn,parseInt(btn.dataset.idx),q));
+    });
+  } else {
+    document.querySelectorAll('.qtfb').forEach(btn=>{
+      btn.addEventListener('click',()=>handleTF(btn,btn.dataset.val==='true',q));
+    });
+  }
+  document.getElementById('qnext').addEventListener('click',()=>{
+    SESSION.quizIdx++;renderQuizQ();
+  });
+}
+
+function handleMCQ(btn,idx,q){
+  if(SESSION._quizAnswered) return;
+  SESSION._quizAnswered=true;
+  const correct=idx===q.ans;
+  if(correct) SESSION.quizScore++;
+  document.querySelectorAll('.qopt').forEach((b,i)=>{
+    b.disabled=true;
+    if(i===q.ans) b.classList.add('correct');
+    else if(i===idx&&!correct) b.classList.add('wrong');
+  });
+  showExpl(q.expl,correct);
+}
+
+function handleTF(btn,chosen,q){
+  if(SESSION._quizAnswered) return;
+  SESSION._quizAnswered=true;
+  const correct=chosen===q.ans;
+  if(correct) SESSION.quizScore++;
+  document.querySelectorAll('.qtfb').forEach(b=>{
+    b.disabled=true;
+    const bv=b.dataset.val==='true';
+    if(bv===q.ans) b.classList.add('correct');
+    else if(bv===chosen&&!correct) b.classList.add('wrong');
+  });
+  showExpl(q.expl,correct);
+}
+
+function showExpl(text,correct){
+  const expl=document.getElementById('qexpl');
+  const next=document.getElementById('qnext');
+  expl.innerHTML=(correct?'✅ <strong>Betul!</strong> ':'❌ <strong>Salah.</strong> ')+esc(text);
+  expl.classList.remove('hidden');
+  next.classList.remove('hidden');
+  const isLast=SESSION.quizIdx>=SESSION.quizQs.length-1;
+  next.textContent=isLast?'Lihat Keputusan 🏆':'Seterusnya →';
+}
+
+function renderQuizResult(){
+  const {quizScore,quizQs}=SESSION;
+  const pct=Math.round((quizScore/quizQs.length)*100);
+  const emoji=pct>=80?'🥇':pct>=60?'🥈':'🥉';
+  const grade=pct>=80?'Cemerlang! Tahniah! 🎉':pct>=60?'Bagus! Teruskan usaha!':'Cuba lagi! Anda pasti boleh! 💪';
+  document.getElementById('quiz-body').innerHTML=`
+    <div class="qresult">
+      <div class="r-emoji">${emoji}</div>
+      <div class="r-score">${quizScore} / ${quizQs.length}</div>
+      <div class="r-pct">${pct}%</div>
+      <div class="r-grade">${grade}</div>
+      <div class="r-btns">
+        <button class="btn-p" id="q-restart">🔄 Cuba Lagi</button>
+        <button class="btn-s" id="q-done">Tutup</button>
+      </div>
+    </div>`;
+  SESSION.quizMode=false;
+  document.getElementById('q-restart').addEventListener('click',()=>startQuizSession());
+  document.getElementById('q-done').addEventListener('click',closeQuizModal);
+}
+
+// ─── CHAT UI ──────────────────────────────────────────────────────────────────
+const chatWin=document.getElementById('chat-win');
+const suggBar=document.getElementById('sugg-bar');
+const inp    =document.getElementById('chat-input');
+
+function sendText(text){
+  if(!text||!text.trim()) return;
+  appendBubble('user',text);
+  suggBar.innerHTML='';
+  const typing=appendTyping();
+  setTimeout(()=>{
+    const res=processMessage(text.trim());
+    typing.remove();
+    appendBubble('bot',res.text,res.sugg);
+    updateSugg(res.sugg);
+  },420);
+}
+
+function appendBubble(role,text,suggs=[]){
+  const wrap=document.createElement('div');
+  wrap.className='chat-bubble '+role;
+  const av=document.createElement('div');
+  av.className='b-avatar';
+  av.textContent=role==='bot'?'🏛️':'👤';
+  const cnt=document.createElement('div');
+  cnt.className='b-content';
+  cnt.innerHTML=renderMd(text);
+  if(suggs&&suggs.length){
+    const chips=document.createElement('div');
+    chips.className='chips';
+    suggs.forEach(s=>{
+      const btn=document.createElement('button');
+      btn.className='chip';
+      btn.dataset.msg=s;
+      btn.textContent=s;
+      chips.appendChild(btn);
+    });
+    cnt.appendChild(chips);
+  }
+  wrap.appendChild(av);wrap.appendChild(cnt);
+  chatWin.appendChild(wrap);
+  chatWin.scrollTop=chatWin.scrollHeight;
+}
+
+function appendTyping(){
+  const wrap=document.createElement('div');
+  wrap.className='chat-bubble bot typing-indicator';
+  wrap.innerHTML='<div class="b-avatar">🏛️</div><div class="b-content"><div class="typing-dots"><span></span><span></span><span></span></div></div>';
+  chatWin.appendChild(wrap);
+  chatWin.scrollTop=chatWin.scrollHeight;
+  return wrap;
+}
+
+function updateSugg(suggs){
+  suggBar.innerHTML='';
+  if(!suggs||!suggs.length) return;
+  suggs.forEach(s=>{
+    const btn=document.createElement('button');
+    btn.className='chip';btn.dataset.msg=s;btn.textContent=s;
+    suggBar.appendChild(btn);
+  });
+}
+
+function renderMd(text){
+  let h=esc(text);
+  // WhatsApp link special handling — keep as anchor
+  h=h.replace(/\[([^\]]+)\]\(https:\/\/wa\.me\/(\d+)\)/g,'<a href="https://wa.me/$2" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600">$1 📱</a>');
+  h=h.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
+  h=h.replace(/_(.*?)_/g,'<em>$1</em>');
+  h=h.replace(/`([^`]+)`/g,'<code style="background:#eef0f3;padding:.1rem .3rem;border-radius:4px;font-size:.82rem">$1</code>');
+  h=h.replace(/^---$/gm,'<hr>');
+  h=h.replace(/^[•\-]\s(.+)/gm,'<li>$1</li>');
+  h=h.replace(/(<li>.*<\/li>)/gs,m=>'<ul>'+m+'</ul>');
+  h=h.replace(/^\d+\.\s(.+)/gm,'<li>$1</li>');
+  h=h.replace(/\n/g,'<br>');
+  h=h.replace(/<\/li><br>/g,'</li>');
+  h=h.replace(/<br><ul>/g,'<ul>');
+  return h;
+}
+
+function esc(s){ if(!s) return ''; return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+
+// ─── SIDEBAR TOPICS ───────────────────────────────────────────────────────────
+function buildSidebar(){
+  const groups={};
+  KB_TOPICS.forEach(t=>{ if(!groups[t.category]) groups[t.category]=[]; groups[t.category].push(t); });
+  let html='';
+  Object.entries(groups).forEach(([cat,ts])=>{
+    html+=`<div class="topic-grp-lbl">${cat}</div>`;
+    ts.forEach(t=>{
+      const lbl=SESSION.lang==='en'?t.title_en:SESSION.lang==='zh'?t.title_zh:t.title;
+      html+=`<button class="topic-btn" data-msg="${esc(t.title)}">${esc(lbl)}</button>`;
+    });
+  });
+  document.getElementById('topic-list').innerHTML=html;
+}
+
+// ─── EVENT BINDING ────────────────────────────────────────────────────────────
+document.getElementById('btn-send').addEventListener('click',()=>{ sendText(inp.value.trim()); inp.value=''; });
+inp.addEventListener('keydown',e=>{ if(e.key==='Enter'){ sendText(inp.value.trim()); inp.value=''; }});
+document.getElementById('btn-clear').addEventListener('click',()=>{
+  const msgs=chatWin.querySelectorAll('.chat-bubble:not(#welcome-msg)');
+  msgs.forEach(m=>m.remove());
+  suggBar.innerHTML='';
+  SESSION.fallbackCount=0; SESSION.lastTopic=null; SESSION.quizMode=false;
+});
+document.getElementById('quiz-close').addEventListener('click',closeQuizModal);
+document.getElementById('quiz-modal').querySelector('.modal-bk').addEventListener('click',closeQuizModal);
+
+document.querySelectorAll('.lang-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const m=btn.dataset.lang==='en'?'english':btn.dataset.lang==='zh'?'mandarin':'melayu';
+    sendText(m);
+    setTimeout(buildSidebar,600);
+  });
+});
+
+document.querySelectorAll('[data-msg]').forEach(btn=>{
+  if(!btn.classList.contains('lang-btn'))
+    btn.addEventListener('click',()=>sendText(btn.dataset.msg));
+});
+
+// Delegate dynamically added chips
+document.body.addEventListener('click',e=>{
+  const btn=e.target.closest('[data-msg]');
+  if(btn&&!btn.classList.contains('lang-btn')&&!btn.closest('.app-header')&&!btn.id.startsWith('welcome'))
+    sendText(btn.dataset.msg);
+});
+
+buildSidebar();
+</script>
+</body>
+</html>
